@@ -4,7 +4,7 @@ import { trackCtaClick } from "../../lib/analytics";
 import { SITE } from "../../lib/siteConfig";
 import SocialIcons from "./SocialIcons";
 import SpotlightLayer from "../ui/SpotlightLayer";
-
+import ThemeToggle from "../common/ThemeToggle";
 
 const links = [
     { to: "/about", label: "ABOUT" },
@@ -70,6 +70,7 @@ const Header = () => {
                 
                 <div className="header-right">
                     <SocialIcons size="md" location="Header" />
+                    <ThemeToggle className="u-mr-sm" />
                 </div>
             </div>
         </header>

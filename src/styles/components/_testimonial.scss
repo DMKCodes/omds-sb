@@ -3,11 +3,13 @@
 
 .tst { 
     background: var(--color-surface,#fff); 
+    color: var(--color-text-inverted);
     border-radius: $radius-lg; 
     box-shadow: $shadow-card; 
     padding: map-get($space,5); 
     display: grid; 
-    gap: map-get($space,3); 
+    gap: map-get($space,3);
+    margin: 0.5rem 0;
 }
 .tst__quote { 
     font-size: clamp(1rem, .95rem + .4vw, 1.25rem); 

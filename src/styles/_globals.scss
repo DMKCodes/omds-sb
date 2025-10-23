@@ -13,6 +13,8 @@
 @use "./components/spotlight" as *;
 @use "./components/testimonial" as *;
 @use "./components/video" as *;
+@use "./components/themes" as *;
+@use "./components/drum_button" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
@@ -44,11 +46,11 @@
 }
 
 html {
-  font-family: v(--font-body, $font-body);
-  font-size:   v(--size-body, $size-body);
-  line-height: v(--line-body, $line-body);
-  color:       v(--color-text, $color-text);
-  background:  v(--color-bg, $color-bg);
+  font-family: var(--font-body, $font-body);
+  font-size:   var(--size-body, $size-body);
+  line-height: var(--line-body, $line-body);
+  color:       var(--color-text, $color-text);
+  background:  var(--color-bg, $color-bg);
   box-sizing: border-box;
 }
 
@@ -61,44 +63,38 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --color-bg:       #000103;
-    --color-surface:  #0B1220;
-    --color-text:     #e6eaf3;
-    --color-primary:  #9DFF00;
-    --color-accent:   #3DA9FF;
-    --color-highlight:#FFC400;
+  :root:not([data-user-theme]) {
+    --color-bg:            #{$color-bg};
+    --color-surface:       #{$color-surface};
+    --color-text:          #{$color-text};
+    --color-text-inverted: #{$color-text-inverted};
+    --color-primary:       #{$brand-primary-dark};
+    --color-accent:        #{$brand-accent-dark};
+    --color-highlight:     #{$brand-hi-dark};
   }
 }
-
 :root[data-theme="dark"] {
-    --color-bg:       #0B1220;
-    --color-surface:  #0B1220;
-    --color-text:     #e6eaf3;
-    --color-primary:  #9DFF00;
-    --color-accent:   #3DA9FF;
-    --color-highlight:#FFC400;
+  --color-bg:            #{$color-bg};
+  --color-surface:       #{$color-surface};
+  --color-text:          #{$color-text};
+  --color-text-inverted: #{$color-text-inverted};
+  --color-primary:       #{$brand-primary-dark};
+  --color-accent:        #{$brand-accent-dark};
+  --color-highlight:     #{$brand-hi-dark};
 }
-
-:root[data-theme="high-contrast"] {
-  --color-bg:       #000;
-  --color-surface:  #000;
-  --color-text:     #fff;
-  --color-primary:  #fff;
-  --color-accent:   #fff;
-  --color-highlight:#9DFF00;
+:root[data-theme="light"] {
+  --color-bg:            #{$paper};
+  --color-surface:       #{$paper};
+  --color-text:          #{$ink};
+  --color-text-inverted: #{$paper};
+  --color-primary:       #{$brand-primary-light};
+  --color-accent:        #{$brand-accent-light};
+  --color-highlight:     #{$brand-hi-light};
 }
-
 :root[data-brand="rhythm-kids"] {
-  --color-primary:  #E63946;
-  --color-accent:   #06B6D4;
-  --color-highlight:#F59E0B;
-}
-
-:root[data-brand="forest-folk"] {
-  --color-primary:  #2ecc71;
-  --color-accent:   #27ae60;
-  --color-highlight:#f1c40f;
+  --color-primary:   #E63946;
+  --color-accent:    #06B6D4;
+  --color-highlight: #F59E0B;
 }
 
 :root { --focus-ring: 3px; --focus-color: #3b82f6; };
@@ -125,8 +121,8 @@ body {
   position: absolute;
   left: -9999px;
   top: 0;
-  background: var(--color-primary, #E63946);
-  color: var(--color-surface, #fff);
+  background: var(#E63946);
+  color: var(#fff);
   padding: .5rem .75rem;
   border-radius: .375rem;
 };
@@ -147,7 +143,6 @@ body {
     color: black;
   }
 }
-
 .data-spotlight {
   &:hover {
     filter: brightness(1.1);

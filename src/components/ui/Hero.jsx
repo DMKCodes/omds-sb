@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import * as Dialog from "@radix-ui/react-dialog";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 import Video from '../common/Video';
 import ActionButton from "./ActionButton";
 import "../../styles/components/_hero.scss";
+
+const PosterPlaceholder = () => (
+    <div className="hero__poster hero__poster--placeholder" aria-hidden="true">
+        <div className="hero__ph-media" />
+    </div>
+);
 
 const Hero = ({
     eyebrow, title, sub,
@@ -15,6 +23,9 @@ const Hero = ({
     as: As = "div",
     contained = true
 }) => {
+    const [open, setOpen] = useState(false);
+    const handleToggle = () => setOpen((v) => !v);
+    const handleOpen = () => setOpen(true);
     const reduced = usePrefersReducedMotion();
 
     const container = {
@@ -65,22 +76,50 @@ const Hero = ({
                     )}
                 </motion.div>
 
-                {posterSrc && (
-                    <motion.div
-                        className="hero__media"
-                        variants={animationItem}
-                        initial="hidden"
+                {(posterSrc || videoSrc) && (
+                    <motion.div 
+                        className="hero__media" 
+                        variants={animationItem} 
+                        initial="hidden" 
                         animate="show"
                     >
                         {videoSrc ? (
-                            <Dialog.Root>
-                                <Dialog.Trigger asChild>
-                                    <button className="hero__poster" type="button" aria-label="Play video">
-                                        <img src={posterSrc} alt="" />
-                                        <span className="hero__play" aria-hidden="true">▶</span>
-                                    </button>
-                                </Dialog.Trigger>
+                            <button
+                                type="button"
+                                className="hero__poster"
+                                aria-label={open ? "Pause video" : "Play video"}
+                                onClick={handleOpen}
+                            >
+                                {posterSrc ? (
+                                    <img src={posterSrc} alt="" loading="lazy" decoding="async" />
+                                ) : (
+                                    <PosterPlaceholder />
+                                )}
+                            </button>
+                        ) : (
+                            <div className="hero__poster" aria-hidden="true">
+                                <img src={posterSrc} alt="" loading="lazy" decoding="async" />
+                            </div>
+                        )}
 
+                        {videoSrc && (
+                            <button
+                                type="button"
+                                className="hero__control"
+                                aria-pressed={open}
+                                aria-label={open ? "Pause video" : "Play video"}
+                                onClick={handleToggle}
+                            >
+                                <FontAwesomeIcon 
+                                    icon={open ? faPause : faPlay} 
+                                    className="hero__control-icon" 
+                                />
+                                <span className="hero__control-text">{open ? "Pause" : "Play"}</span>
+                            </button>
+                        )}
+
+                        {videoSrc && (
+                            <Dialog.Root open={open} onOpenChange={setOpen}>
                                 <Dialog.Portal>
                                     <Dialog.Overlay className="hero-modal__overlay" />
                                     <Dialog.Content className="hero-modal__content" aria-label="Video">
@@ -90,16 +129,12 @@ const Hero = ({
                                             poster={posterSrc}
                                             captions={captions}
                                             controls
-                                            autoPlay={false}
+                                            autoPlay={open}
                                             className="hero-modal__video"
                                         />
                                     </Dialog.Content>
                                 </Dialog.Portal>
                             </Dialog.Root>
-                        ) : (
-                            <div className="hero__poster" aria-hidden="true">
-                                <img src={posterSrc} alt="" />
-                            </div>
                         )}
                     </motion.div>
                 )}

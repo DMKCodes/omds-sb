@@ -3,7 +3,7 @@
 
 .c-button {
   --_bg:    var(--color-primary);
-  --_text:  var(--color-surface);
+  --_text:  var(--color-text-inverted);
   --_ring:  var(--color-accent);
 
   display: inline-flex;
@@ -23,11 +23,11 @@
   &:hover { transform: translateY(-1px); }
   &:active { transform: translateY(0); }
 
-  &:focus-visible { box-shadow: 0 0 0 4px v(--_ring, $color-accent); }
+  &:focus-visible { box-shadow: 0 0 0 4px v(--_ring, $color-primary); }
 }
 
 .c-button--ghost {
   background: transparent;
-  color: v(--color-accent, $color-accent);
+  color: v(--color-primary, $color-primary);
   border: 2px solid currentColor;
 }

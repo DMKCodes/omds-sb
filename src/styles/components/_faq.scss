@@ -6,7 +6,7 @@
 }
 .faq__item { 
     border-radius: $radius-md; 
-    background: var(--color-surface,#fff); 
+    background: var(--color-surface);
     box-shadow: $shadow-card; 
     overflow: hidden; 
 }
@@ -17,14 +17,17 @@
     justify-content: space-between; 
     align-items: center; 
     gap: .75rem; 
-    padding: 1rem 1.25rem; 
+    padding: 1rem 1.25rem;
+    font-size: 1.2rem; 
+    color: var(--color-text-inverted);
     font-weight: 700; 
     background: none; 
     border: 0; 
     cursor: pointer; 
 }
 .faq__icon { 
-    transition: transform .2s ease; 
+    transition: transform .2s ease;
+    font-size: 1.6rem;
 }
 [data-state="open"] .faq__icon { 
     transform: rotate(45deg); // heuristic changes + to x
@@ -33,5 +36,6 @@
     overflow: hidden; 
 }
 .faq__inner { 
-    padding: 0 1.25rem 1rem 1.25rem; 
+    padding: 0 1.25rem 1rem 1.25rem;
+    color: var(--color-text-inverted);
 }

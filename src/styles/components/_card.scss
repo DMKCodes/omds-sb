@@ -2,10 +2,10 @@
 @use "../variables" as *;
 
 .card {
-  --card-bg:        color-mix(in srgb, var(--color-surface, #0f172a) 88%, transparent);
+  --card-bg:        color-mix(in srgb, var(--color-surface) 88%, transparent);
   --card-border:    rgba(255,255,255,.32);
   --card-border-hi: rgba(255,255,255,.44);
-  --card-glow:      color-mix(in srgb, var(--color-primary,#2AB3FF) 55%, transparent);
+  --card-glow:      color-mix(in srgb, var(--color-primary) 55%, transparent);
   --glow-ring:      2px;
   --glow-bloom:     18px;
   --glow-alpha:     .75;
@@ -26,7 +26,7 @@
     0 0 0 1px rgba(255,255,255,.08) inset;
 
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--color-primary);
   border-radius: 1rem;
   padding: clamp(1rem, 2.4vw, 1.25rem);
   display: grid;
@@ -101,8 +101,8 @@
 .card__media { display: flex; align-items: center; gap: .75rem; }
 
 .card__icon {
-  --icon-bg: color-mix(in srgb, var(--card-glow) 40%, transparent);
-  --icon-color: var(--color-primary,#2AB3FF);
+  --icon-bg: color-mix(in srgb, var(--card-glow) 80%, transparent);
+  --icon-color: var(--color-text-inverted,#2AB3FF);
   display: inline-flex; align-items: center; justify-content: center;
   width: 60px; 
   height: 60px;
@@ -117,8 +117,8 @@
 .card__icon svg { width: 28px; height: 28px; color: var(--icon-color); }
 .card__icon svg path { fill: currentColor; }
 
-.card__title { margin: 0; font-size: clamp(1.08rem, 1.8vw, 1.25rem); line-height: 1.2; }
-.card__text  { margin: 8px 0 0 0; color: color-mix(in srgb, var(--color-text,#fff) 82%, transparent); }
+.card__title { margin: 0; font-size: clamp(1.08rem, 1.8vw, 1.25rem); line-height: 1.2; color: var(--color-text-inverted); }
+.card__text  { margin: 8px 0 0 0; color: var(--color-text-inverted); }
 .card__eyebrow {
   font-size: .8rem; 
   letter-spacing: .04em; 
