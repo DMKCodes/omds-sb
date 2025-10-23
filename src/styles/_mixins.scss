@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+/* Function to read from spacing map */
+@function s($key) { @return map-get($space, $key); }
+
+/* Media query handler */
+@mixin respond-to($name) {
+  $w: map-get($bp, $name);
+  @if $w { @media (min-width: $w) { @content; } }
+}
+
+/* CSS helper w/ fallback */
+@function v($name, $fallback) {
+  @return var(#{$name}, #{$fallback});
+}

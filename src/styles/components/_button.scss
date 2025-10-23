@@ -1,0 +1,33 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.c-button {
+  --_bg:    var(--color-primary);
+  --_text:  var(--color-surface);
+  --_ring:  var(--color-accent);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: var(--space-3, .75rem) var(--space-4, 1rem);
+  border-radius: v(--radius-md, $radius-md);
+  border: 0;
+  background: v(--_bg, $color-primary);
+  color: v(--_text, #fff);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+
+  &:hover { transform: translateY(-1px); }
+  &:active { transform: translateY(0); }
+
+  &:focus-visible { box-shadow: 0 0 0 4px v(--_ring, $color-accent); }
+}
+
+.c-button--ghost {
+  background: transparent;
+  color: v(--color-accent, $color-accent);
+  border: 2px solid currentColor;
+}

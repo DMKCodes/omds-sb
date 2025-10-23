@@ -1,0 +1,129 @@
+@use "../_variables" as *;
+@use "../_mixins" as *;
+
+.hero--contained {
+  padding-block: map-get($space, 8);
+  background: var(--color-bg, #000103);
+  color: var(--color-text, #F8FAFC);
+}
+
+.hero--contained .hero__grid {
+  max-width: $container-lg;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.hero__grid {
+  display: grid;
+  gap: map-get($space, 6);
+  align-items: center;
+
+  @include respond-to(md) {
+    grid-template-columns: 1.1fr 1fr;
+    gap: map-get($space, 7);
+  }
+}
+
+.hero--center .hero__grid { text-align: center; }
+.hero--center .hero__actions { justify-content: center; }
+
+.hero__content { display: grid; gap: map-get($space, 4); }
+
+.hero__eyebrow {
+  font-size: .8125rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.6);
+}
+
+.hero__title {
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.25rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero__sub {
+  font-size: clamp(1rem, .95rem + .5vw, 1.25rem);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($space, 3);
+}
+
+// .hero__media { }
+.hero__poster {
+  position: relative;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+  cursor: pointer;
+
+  img { display: block; width: 100%; height: auto; }
+}
+
+.hero__play {
+  position: absolute;
+  inset-inline-end: .75rem;
+  inset-block-end: .75rem;
+  display: inline-grid;
+  place-items: center;
+  width: 3rem; height: 3rem;
+  border-radius: 999px;
+  background: var(--color-primary, #E63946);
+  color: var(--color-surface, #fff);
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+
+/* Modal styles */
+.hero-modal__overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+}
+
+.hero-modal__content {
+  position: fixed;
+  inset: 10% 5%;
+  background: #000;
+  border-radius: $radius-lg;
+  box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  display: grid;
+  place-items: center;
+  padding: 0;
+
+  @include respond-to(md) { inset: 8% 12%; }
+}
+
+.hero-modal__close {
+  position: absolute;
+  top: .75rem; right: .75rem;
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 0;
+  padding: .5rem .6rem;
+  border-radius: $radius-md;
+  cursor: pointer;
+}
+
+.hero-modal__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+  }
+}
+
+.hero-modal__video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}

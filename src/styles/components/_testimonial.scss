@@ -1,0 +1,39 @@
+@use "../_variables" as *; 
+@use "../_mixins" as *;
+
+.tst { 
+    background: var(--color-surface,#fff); 
+    border-radius: $radius-lg; 
+    box-shadow: $shadow-card; 
+    padding: map-get($space,5); 
+    display: grid; 
+    gap: map-get($space,3); 
+}
+.tst__quote { 
+    font-size: clamp(1rem, .95rem + .4vw, 1.25rem); 
+    margin: 0; 
+}
+.tst__byline { 
+    display: flex; 
+    align-items: center; 
+    gap: .75rem; 
+}
+.tst__avatar { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 999px; 
+    object-fit: cover; 
+}
+.tst__author { 
+    font-weight:700; 
+}
+.tst__role { 
+    font-size:.875rem; 
+    opacity:.75; 
+}
+
+.tst-list {
+    display:grid; 
+    gap: 1rem; 
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); 
+}

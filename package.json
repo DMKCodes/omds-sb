@@ -1,0 +1,64 @@
+{
+  "name": "react-sb-boiler",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@dr.pogodin/react-helmet": "^3.0.4",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
+    "@radix-ui/react-accordion": "^1.2.12",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.546.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.65.0",
+    "react-router-dom": "^7.9.4",
+    "react-scripts": "5.0.1",
+    "sass": "^1.93.2",
+    "yet-another-react-lightbox": "^3.25.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build && npm run sitemap",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "lint": "eslint src --ext .js,.jsx",
+    "format": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@tsconfig/recommended": "^1.0.10",
+    "@vitejs/plugin-react": "^5.0.4",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "prettier": "^3.6.2",
+    "vite": "^7.1.10"
+  }
+}

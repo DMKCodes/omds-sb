@@ -1,0 +1,90 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Featured media
+.feature {
+  display: grid;
+  gap: clamp(1rem, 2vw, 1.25rem);
+  align-items: center;
+}
+.feature--media {
+  grid-template-columns: 1fr;
+  @media (min-width: 56rem) { grid-template-columns: 1.3fr 1fr; }
+}
+.feature__media {
+  border-radius: .75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.feature__content .muted {
+  color: color-mix(in srgb, var(--color-text, #fff) 70%, transparent);
+}
+
+// Testimonials teaser
+.testimonials {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  gap: clamp(.75rem, 2vw, 1rem);
+  grid-template-columns: 1fr;
+  @media (min-width: 56rem) { grid-template-columns: 1fr 1fr; }
+}
+.testimonial {
+  background: color-mix(in srgb, var(--color-surface, #0f172a) 85%, transparent);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: .75rem;
+  padding: 1rem;
+}
+.testimonial__quote {
+  margin: 0 0 .5rem 0;
+  font-size: clamp(1.05rem, 1.6vw, 1.1rem);
+  line-height: 1.45;
+}
+.testimonial__meta {
+  font-size: .9rem;
+  color: color-mix(in srgb, var(--color-text, #fff) 65%, transparent);
+}
+
+// Events teaser
+.events__list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  gap: .5rem;
+}
+.events__item {
+  display: grid;
+  grid-template-columns: 9rem 1fr auto;
+  gap: .75rem;
+  align-items: center;
+  background: color-mix(in srgb, var(--color-surface, #0f172a) 85%, transparent);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: .5rem;
+  padding: .65rem .75rem;
+}
+.events__date  { font-weight: 700; color: var(--color-primary, #2AB3FF); }
+.events__venue { font-weight: 600; }
+.events__city  { color: color-mix(in srgb, var(--color-text, #fff) 70%, transparent); }
+
+// CTA section
+.cta {
+  text-align: center;
+  background:
+    radial-gradient(200px 90px at 80% 0%, color-mix(in srgb, var(--color-primary,#2AB3FF) 20%, transparent), transparent 70%),
+    radial-gradient(150px 70px at 20% 100%, color-mix(in srgb, var(--color-accent,#2BFF88) 16%, transparent), transparent 70%),
+    color-mix(in srgb, var(--color-surface,#0f172a) 90%, transparent);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 1rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.cta .muted {
+  color: color-mix(in srgb, var(--color-text,#fff) 70%, transparent);
+}
+.cta__actions {
+  display: flex;
+  gap: .6rem;
+  justify-content: center;
+  margin-top: .8rem;
+  flex-wrap: wrap;
+}
