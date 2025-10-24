@@ -1,41 +1,57 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { trackCtaClick } from "../../lib/analytics";
+import { NavLink, Link } from "react-router-dom";
+import ActionButton from "./ActionButton";
+import { SITE } from "../../lib/siteConfig";
 
 const Footer = () => {
-    const year = new Date().getFullYear();
+    const logoSrc = "/assets/brand/logo.png";
+
     return (
-        <footer className="site-footer">
-            <div className="container footer-inner">
-                <nav aria-label="Footer">
-                    <ul className="footer-nav">
-                        <li>
-                            <Link 
-                                to="/faq" 
-                                onClick={() => trackCtaClick({ label: "FAQ", location: "Footer" })}
-                            >
-                                FAQ
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to="/contact" 
-                                onClick={() => trackCtaClick({ label: "Contact", location: "Footer" })}
-                            >
-                                Contact
-                            </Link>
-                        </li>
-                        <li>
-                            <a 
-                                href="mailto:hello@example.com"
-                                onClick={() => trackCtaClick({ label: "Email", location: "Footer" })}
-                            >
-                                Email
-                            </a>
-                        </li>
+        <footer className="site-footer" role="contentinfo">
+            <div className="container footer__grid">
+                <div className="footer__brand">
+                    <Link to="/" className="footer__logo">
+                        <img
+                            src={logoSrc}
+                            alt={`${SITE.name} logo`}
+                            width="240"
+                            height="72"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </Link>
+                </div>
+
+                <nav className="footer__nav" aria-label="Footer">
+                    <ul className="footer__links">
+                        <li><NavLink to="/about"   className="footer__link">About</NavLink></li>
+                        <li><NavLink to="/media"   className="footer__link">Media</NavLink></li>
+                        <li><NavLink to="/events"  className="footer__link">Events</NavLink></li>
+                        <li><NavLink to="/contact" className="footer__link">Contact</NavLink></li>
+                        <li><NavLink to="/privacy" className="footer__link">Privacy Policy</NavLink></li>
                     </ul>
                 </nav>
-                <p>© {year} HOTKEY CREATIVE</p>
+
+                <address className="footer__address">
+                    <strong className="footer__business">Powerhouse Percussion</strong><br />
+                    Wes Lambert &mdash; One-Man Chaos<br />
+                    <a className="footer__contact" href="tel:+15555555555">+1 (555) 555-5555</a><br />
+                    <a className="footer__contact" href="mailto:trashlan@ptd.net">trashlan@ptd.net</a><br />
+                    Milford, Pike County, Pennsylvania
+                </address>
+
+                <ActionButton
+                    cfg={{ label: "Book now", href: "/contact" }}
+                    variant="primary"
+                    className="footer__cta"
+                    data-spotlight
+                />
+            </div>
+
+            <div className="footer__legal">
+                <div className="container footer__legal-inner">
+                <small>&copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.</small>
+                </div>
             </div>
         </footer>
     );

@@ -1,6 +1,8 @@
 import React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import "../../styles/components/_faq.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleQuestion, faCommentDots } from "@fortawesome/free-solid-svg-icons";
 
 const FAQAccordion = ({ items = [] }) => {
     return (
@@ -9,12 +11,16 @@ const FAQAccordion = ({ items = [] }) => {
                 <Accordion.Item className="faq__item" key={i} value={`item-${i}`}>
                     <Accordion.Header className="faq__header">
                         <Accordion.Trigger className="faq__trigger">
-                            {it.q}
+                            <FontAwesomeIcon icon={faCircleQuestion} size="2xl" />{it.q}
                             <span className="faq__icon" aria-hidden="true">+</span>
                         </Accordion.Trigger>
                     </Accordion.Header>
                     <Accordion.Content className="faq__content">
-                        <div className="faq__inner">{it.a}</div>
+                        <div className="faq__inner">
+                            <FontAwesomeIcon icon={faCommentDots} size="2xl" className="faq__answer-icon" />
+                            <span className='faq__answer'>{it.a}</span>
+                            <span></span>
+                        </div>
                     </Accordion.Content>
                 </Accordion.Item>
             ))}

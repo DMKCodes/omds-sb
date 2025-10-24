@@ -16,13 +16,13 @@ $radius-lg: 16px;
 $shadow-card: 0 8px 28px rgba(15,23,42,.12);
 
 // Brand-specific colors
-$brand-primary-dark:  #29bf12;
-$brand-accent-dark:   #00a5cf;
+$brand-primary-dark:  #00A7B3;
+$brand-accent-dark:   #249e11;
 $brand-hi-dark:       #EEE82C;
-$brand-primary-light: #0d5314;
+$brand-primary-light: #249e11;
 $brand-accent-light:  #0c1249;
 $brand-hi-light:      #f9a620;
-$ink:                 #1F2421;
+$ink:                 #111311;
 $paper:               #F8FAFC;
 
 // Dark mode defaults
@@ -35,8 +35,10 @@ $color-accent:        $brand-accent-dark;
 $color-highlight:     $brand-hi-dark;
 
 // Typography
-$font-heading: "Space Grotesk", system-ui, sans-serif;
-$font-body:    "Manrope", system-ui, sans-serif;
+$font-heading: "Anton SC", system-ui, sans-serif;
+$font-body:    "Open Sans", system-ui, sans-serif;
 $line-body:    1.6;
+$size-h1:      3.2rem;
+$size-h2:      2rem;
 $size-body:    18px;
 $size-sm:      15px;

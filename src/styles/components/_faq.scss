@@ -18,7 +18,7 @@
     align-items: center; 
     gap: .75rem; 
     padding: 1rem 1.25rem;
-    font-size: 1.2rem; 
+    font-size: 1.3rem; 
     color: var(--color-text-inverted);
     font-weight: 700; 
     background: none; 
@@ -36,6 +36,14 @@
     overflow: hidden; 
 }
 .faq__inner { 
-    padding: 0 1.25rem 1rem 1.25rem;
+    padding: 2rem 1.25rem;
     color: var(--color-text-inverted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-text-inverted);
+}
+.faq__answer {
+    max-width: 48rem;
+    font-weight: 600;
 }

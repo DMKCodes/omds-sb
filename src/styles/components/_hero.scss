@@ -37,9 +37,10 @@
 }
 
 .hero__title {
-  font-size: clamp(2rem, 1.2rem + 3vw, 3.25rem);
+  font-size: clamp(2rem, 1.2rem + 3vw, 3.7rem);
   line-height: 1.1;
   margin: 0;
+  margin-right: 1em;
   font-weight: 800;
 }
 

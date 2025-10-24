@@ -5,7 +5,7 @@ export const faq = [
     },
     {
         q: "Is your service appropriate for young children?",
-        a: "While young children have enjoyed our service, the potential for loud noise and flashing lights can post a risk. Parental discretion is advised and children should not be left unattended."
+        a: "While young children have enjoyed our service, the potential for loud noise and flashing lights can pose a risk. Parental discretion is advised, and children should not be left unattended."
     },
     {
         q: "Can't find your question?",

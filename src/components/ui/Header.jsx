@@ -10,7 +10,6 @@ const links = [
     { to: "/about", label: "ABOUT" },
     { to: "/media", label: "MEDIA" },
     { to: "/events", label: "EVENTS" },
-    { to: "/faq", label: "FAQ" },
     { to: "/contact", label: "CONTACT" },
 ];
 

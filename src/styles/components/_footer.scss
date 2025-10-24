@@ -1,0 +1,109 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.site-footer {
+  background: var(--color-bg, #0b1220);
+  color: color-mix(in srgb, var(--color-text,#fff) 92%, transparent);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.site-footer .c-button {
+    max-width: 200px;
+    width: 142px;
+}
+
+.footer__grid {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: map-get($bp, md)) {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.footer__brand {
+  display: grid;
+  align-content: start;
+  gap: .75rem;
+  padding: 0 3rem;
+}
+
+.footer__logo img {
+  display: block;
+  height: auto;
+  width: 320px;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,.35));
+  margin-bottom: 2rem;
+}
+
+.footer__cta { 
+  margin-top: .5rem; 
+  width: fit-content;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__links {
+  --link-gap: .6rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--link-gap) clamp(.75rem, 2vw, 1rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: color-mix(in srgb, var(--color-text,#fff) 85%, transparent);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: color .15s ease, border-color .15s ease, text-shadow .15s ease;
+
+  &:hover { 
+    color: var(--color-text,#fff);
+    border-bottom-color: color-mix(in srgb, var(--color-primary,#2AB3FF) 70%, transparent);
+    text-shadow: 0 0 12px color-mix(in srgb, var(--color-primary,#2AB3FF) 40%, transparent);
+  }
+  &.active {
+    border-bottom-color: var(--color-primary,#2AB3FF);
+  }
+}
+
+.footer__address {
+  font-style: normal;
+  color: color-mix(in srgb, var(--color-text,#fff) 80%, transparent);
+  line-height: 1.6;
+
+  .footer__business {
+    color: var(--color-text,#fff);
+    font-weight: 700;
+  }
+
+  .footer__contact {
+    color: color-mix(in srgb, var(--color-text,#fff) 92%, transparent);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255,255,255,.25);
+    transition: color .15s ease, border-color .15s ease;
+    &:hover {
+      color: var(--color-text,#fff);
+      border-bottom-color: var(--color-primary,#2AB3FF);
+    }
+  }
+}
+
+.footer__legal {
+  border-top: 1px solid rgba(255,255,255,.06);
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+}
+
+.footer__legal-inner {
+  padding: .75rem 1rem;
+  color: color-mix(in srgb, var(--color-text,#fff) 70%, transparent);
+}

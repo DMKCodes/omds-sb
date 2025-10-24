@@ -2,32 +2,32 @@
 @use "../variables" as *;
 
 .c-button {
-  --_bg:    var(--color-primary);
-  --_text:  var(--color-text-inverted);
-  --_ring:  var(--color-accent);
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5rem;
-  padding: var(--space-3, .75rem) var(--space-4, 1rem);
-  border-radius: v(--radius-md, $radius-md);
-  border: 0;
-  background: v(--_bg, $color-primary);
-  color: v(--_text, #fff);
+  background: var(--color-primary);
+  color: var(--color-text);
+  font-family: inherit;
+  padding: 0.6em 1.3em;
   font-weight: 700;
-  text-decoration: none;
+  font-size: 18px;
+  border: 3px solid var(--color-text);
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em var(--color-text);
   cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease;
+  text-decoration: none;
 
-  &:hover { transform: translateY(-1px); }
-  &:active { transform: translateY(0); }
+  &:hover { 
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em var(--color-text);
+  }
+  &:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+  }
 
-  &:focus-visible { box-shadow: 0 0 0 4px v(--_ring, $color-primary); }
+  &:focus-visible { box-shadow: 0 0 0 4px var(--_ring, $color-primary); }
 }
 
 .c-button--ghost {
   background: transparent;
-  color: v(--color-primary, $color-primary);
-  border: 2px solid currentColor;
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
 }

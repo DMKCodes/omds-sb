@@ -59,7 +59,7 @@ const Hero = ({
                             {eyebrow}
                         </motion.div>
                     )}
-                    <motion.h1 className="hero__title" variants={animationItem}>{title}</motion.h1>
+                    <motion.h1 className="hero__title h-staff" variants={animationItem}>{title}</motion.h1>
                     {sub && (
                         <motion.p className="hero__sub" variants={animationItem}>
                             {sub}
@@ -70,8 +70,8 @@ const Hero = ({
 
                     {(primary || secondary) && (
                         <motion.div className="hero__actions" variants={animationItem}>
-                            <ActionButton cfg={primary} variant="primary" data-spotlight />
-                            <ActionButton cfg={secondary} variant="secondary" data-spotlight />
+                            <ActionButton cfg={primary} variant="primary" />
+                            <ActionButton cfg={secondary} variant="secondary" />
                         </motion.div>
                     )}
                 </motion.div>

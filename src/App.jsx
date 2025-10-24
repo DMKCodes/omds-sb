@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/common/Layout.jsx";
 import AnalyticsTracker from "./components/common/AnalyticsTracker.jsx";
 import ScrollRestore from "./components/common/ScrollRestore.jsx";
+import MusicNotes from "./components/ui/MusicNotes.jsx";
 import routes from "./routes/routes.jsx";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
     <>
       <AnalyticsTracker />
       <ScrollRestore />
+      <MusicNotes density={24} zIndex={0} />
       <Routes>
         <Route element={<Layout />}>
           {routes.map(({ path, Component }, i) => (

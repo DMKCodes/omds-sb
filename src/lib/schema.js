@@ -9,7 +9,7 @@ export function ld(obj) {
 export function makeOrganization({
     name = SITE.name,
     url = SITE.siteUrl,
-    logo = absoluteUrl("/assets/logo-512.png"),
+    logo = absoluteUrl("/assets/brand/logo.png"),
     sameAs = SITE.socials || [],
     telephone = SITE.phone,
     address = SITE.address,
