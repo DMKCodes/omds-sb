@@ -1,6 +1,6 @@
 export const SITE = {
-    name: "One Man Drum Show",
-    tagline: "Positivity Through Percussion | Audiovisual Performances | Pike County, PA",
+    name: "Powerhouse Percussion",
+    tagline: "Positivity Through Percussion | Audiovisual Entertainer | Pike County, PA",
     siteUrl: "https://www.onemandrumshow.com",
     locale: "en_US",
     defaultImage: "/assets/brand/logo.png",

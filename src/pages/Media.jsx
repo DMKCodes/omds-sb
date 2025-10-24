@@ -7,14 +7,14 @@ import TestimonialList from "../components/modules/TestimonialList";
 
 const Media = () => {
     const seo = buildSeo({
-        title: "PROJECT TITLE",
-        description: "Project description, typically 30-60 chars.",
-        path: "/",
+        title: "Media & Testimonials — One Man Drum Show | Pike County, Pennsylvania",
+        description: "Watch performance clips, browse photos, and read testimonials for Powerhouse Percussion's One Man Drum Show. See why schools and event organizers love to book this immersive and educational drum show.",
+        path: "/media",
         image: "/assets/example.jpg",
     });
 
     return (
-        <div className="container u-stack">
+        <div className="container u-stack page">
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
             

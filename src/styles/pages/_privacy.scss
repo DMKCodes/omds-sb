@@ -1,0 +1,37 @@
+@use "../variables" as *;
+
+.legal {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.25rem);
+
+  h1, h2 { margin: 0 0 1rem 0; }
+  p { margin: 0 0 1rem 0; color: color-mix(in srgb, var(--color-text,#fff) 90%, transparent); }
+  ul { margin: 0; padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+}
+
+.legal__effective {
+  color: color-mix(in srgb, var(--color-text,#fff) 70%, transparent);
+  font-size: .95rem;
+}
+
+.legal__section {
+  background: color-mix(in srgb, var(--color-surface,#0b1220) 86%, transparent);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius-lg, 16px);
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  display: grid;
+  gap: .5rem;
+}
+
+.legal__address {
+  font-style: normal;
+  a {
+    color: var(--color-text,#fff);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255,255,255,.3);
+    &:hover { border-bottom-color: var(--color-primary,#2AB3FF); }
+  }
+}

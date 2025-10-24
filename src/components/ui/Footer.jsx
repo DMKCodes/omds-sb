@@ -38,7 +38,13 @@ const Footer = () => {
                     <a className="footer__contact" href="tel:+15555555555">+1 (555) 555-5555</a><br />
                     <a className="footer__contact" href="mailto:trashlan@ptd.net">trashlan@ptd.net</a><br />
                     Milford, Pike County, Pennsylvania
+                    <p className="hotkey">
+                        Website by{' '} 
+                        <strong><a href="https://hotkeycreative.com">Hotkey Creative</a></strong>
+                        .
+                    </p>
                 </address>
+                
 
                 <ActionButton
                     cfg={{ label: "Book now", href: "/contact" }}

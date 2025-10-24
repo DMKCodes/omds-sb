@@ -6,14 +6,14 @@ import Section from "../components/common/Section";
 
 const About = () => {
     const seo = buildSeo({
-        title: "PROJECT TITLE",
-        description: "Project description, typically 30-60 chars.",
-        path: "/",
+        title: "About One Man Chaos — Wes Lambert & Powerhouse Percussion",
+        description: "Meet Wes Lambert: entertainer, community leader, and creator of the video drum solo. Learn how One Man Chaos blends education, inspiration, and high-impact percussion for audiences of all ages",
+        path: "/about",
         image: "/assets/example.jpg",
     });
 
     return (
-        <div className="container u-stack">
+        <div className="container u-stack page">
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
             

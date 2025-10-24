@@ -14,7 +14,7 @@ const NotFound = () => {
     });
     
     return (
-        <div className="container u-stack">
+        <div className="container u-stack page">
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
             <Section size="lg" padding="xl" alt>

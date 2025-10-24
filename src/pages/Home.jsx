@@ -15,14 +15,14 @@ import TestimonialList from "../components/modules/TestimonialList";
 
 const Home = () => {
     const seo = buildSeo({
-        title: "Powerhouse Percussion",
-        description: "Positivity Through Percussion | Audiovisual Performances | Pike County, PA",
+        title: "Powerhouse Percussion — One Man Chaos | Video Drum Show in Pike County, Pennsylvania",
+        description: "A 45-minute drum and visuals extravaganza for schools, events, and parties. Book Powerhouse Percussion's One Man Drum Show for unforgettable, family-friendly entertainment in Northeast Pennsylvania.",
         path: "/",
         image: "/assets/example.jpg",
     });
 
     return (
-        <div className="container u-stack">
+        <div className="container u-stack page">
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 

@@ -7,14 +7,14 @@ import ContactForm from "../components/forms/ContactForm";
 
 const Contact = () => {
     const seo = buildSeo({
-        title: "PROJECT TITLE",
-        description: "Project description, typically 30-60 chars.",
-        path: "/",
+        title: "Contact Powerhouse Percussion — Book Now | Pike County, Pennsylvania",
+        description: "Ready to bring the One Man Drum Show to your school or event? Send a message for dates, packages, and technical needs. Powerhouse Percussion makes setup easy.",
+        path: "/contact",
         image: "/assets/example.jpg",
     });
     
     return (
-        <div className="container u-stack">
+        <div className="container u-stack page">
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 

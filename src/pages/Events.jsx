@@ -7,9 +7,9 @@ import DrumButton from "../components/ui/DrumButtonTest";
 
 const Events = () => {
     const seo = buildSeo({
-        title: "PROJECT TITLE",
-        description: "Project description, typically 30-60 chars.",
-        path: "/",
+        title: "Upcoming Events — One Man Drum Show | Pike County, Pennsylvania",
+        description: "See where Powerhouse Percussion is performing next. View dates, locations, and details—or request One Man Chaos for your school, festival, or community event.",
+        path: "/events",
         image: "/assets/example.jpg",
     });
 
@@ -39,7 +39,7 @@ const Events = () => {
     // });
 
     return (
-        <div className="container u-stack">
+        <div className="container u-stack page">
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 
