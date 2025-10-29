@@ -3,7 +3,7 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { buildSeo, renderHelmetTags } from "../lib/seo";
 import { ld, makeOrganization } from "../lib/schema";
 import Section from "../components/common/Section";
-import TestimonialList from "../components/modules/TestimonialList";
+import TestimonialList from "../components/common/TestimonialList";
 
 const Media = () => {
     const seo = buildSeo({

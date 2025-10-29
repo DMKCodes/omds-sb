@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import ActionButton from "./ActionButton";
+import ActionButton from "../common/ActionButton";
 import { SITE } from "../../lib/siteConfig";
 
 const Footer = () => {

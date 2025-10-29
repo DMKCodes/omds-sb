@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import "../../styles/components/_media.scss";
+import "../../styles/components/_lightbox.scss";
 
 const MediaLightbox = ({ items = [] }) => {
     const [open, setOpen] = useState(false);

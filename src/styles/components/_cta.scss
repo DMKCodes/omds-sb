@@ -1,0 +1,41 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.cta {
+  text-align: center;
+  background: var(--color-surface);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 1rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.cta h2 {
+  color: var(--color-text-inverted);
+  margin: .6rem 0;
+}
+.cta .muted {
+  color: var(--color-text-inverted); 
+}
+.cta__actions {
+  display: flex;
+  gap: .6rem;
+  justify-content: center;
+  margin-top: .8rem;
+  flex-wrap: wrap;
+}
+
+.cta__actions .c-button, .c-button--ghost {
+  border: 2px solid var(--color-text-inverted);
+  box-shadow: 0.1em 0.1em var(--color-text-inverted);
+  color: var(--color-text-inverted);
+  &:hover { 
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em var(--color-text-inverted);
+  }
+}
+.cta__actions .c-button {
+  background: #00F0FF;
+}
+.cta__actions .c-button--ghost {
+  background: transparent;
+}

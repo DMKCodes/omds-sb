@@ -4,11 +4,11 @@
 .pricing { 
     display: grid; 
     gap: 1.25rem; 
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
 }
 .pricing__card { 
     background: var(--color-surface, #fff); 
-    color: var(--color-text, #0F172A); 
+    color: var(--color-text-inverted, #0F172A); 
     border-radius: $radius-lg; 
     box-shadow: $shadow-card; 
     padding: map-get($space, 5); 
@@ -29,7 +29,7 @@
 }
 .pricing__name { 
     margin: 0; 
-    font-size: 1.125rem; 
+    font-size: 1.125rem;
 }
 .pricing__price { 
     font-size: 1.75rem; 
@@ -48,4 +48,13 @@
 .is-popular { 
     outline: 3px solid var(--color-accent,#06B6D4); 
     outline-offset: 2px; 
+}
+.pricing__note {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: var(--size-sm, 15px);
+}
+.pricing__note a {
+    text-decoration: underline;
+    color: var(--color-text, #fff);
 }

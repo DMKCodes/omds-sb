@@ -1,8 +1,8 @@
 export const plans = [
     {
         id: "free",
-        name: "Free Tier",
-        price: "$0",
+        name: "The Toe Tapper",
+        price: "$299",
         blurb: "100% free • limited functionality",
         features: [
             "Feature one",
@@ -13,8 +13,8 @@ export const plans = [
     },
     {
         id: "mid",
-        name: "Mid Tier",
-        price: "$49/mo.",
+        name: "The Hip Shaker",
+        price: "$499",
         blurb: "expand your horizons • improved functionality",
         features: [
             "All features of free tier",
@@ -26,8 +26,8 @@ export const plans = [
     },
     {
         id: "pro",
-        name: "Pro Tier",
-        price: "$109/mo.",
+        name: "The Roof Raiser",
+        price: "$999",
         blurb: "the sky's the limit • greatly improved functionality",
         features: [
             "All features of free & mid tiers",

@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "@dr.pogodin/react-helmet";
 import { buildSeo, renderHelmetTags } from "../lib/seo";
 import { ld, makeOrganization } from "../lib/schema";
+import { featuredBioShort } from "../data/featured";
 import { events } from "../data/events";
 import { faq } from "../data/faq";
 import { infoCards } from "../data/info-cards";
@@ -9,9 +10,11 @@ import { infoCards } from "../data/info-cards";
 import Hero from "../components/ui/Hero";
 import Section from "../components/common/Section";
 import Card from "../components/common/Card";
-import ActionButton from "../components/ui/ActionButton";
-import FAQAccordion from "../components/modules/FAQAccordion";
-import TestimonialList from "../components/modules/TestimonialList";
+import ActionButton from "../components/common/ActionButton";
+import FeaturedContent from "../components/common/FeaturedContent";
+import FAQAccordion from "../components/common/FAQAccordion";
+import TestimonialList from "../components/common/TestimonialList";
+import CTA from "../components/common/CTA";
 
 const Home = () => {
     const seo = buildSeo({
@@ -47,32 +50,15 @@ const Home = () => {
                             key={i} 
                             title={c.title} 
                             text={c.text} 
-                            media={c.media}  
+                            media={c.media}
+                            className="u-hover-elev" 
                         />
                     ))}
                 </div>
             </Section>
 
             <Section padding="xl" alt>
-                <div className="feature feature--bio">
-                    <div className="feature__media">
-                        <img
-                            src="assets\media\wes-pic-test.jpg"
-                            alt="Wes Lambert, the One Man Chaos drum performer"
-                            className="bio__img"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    </div>
-
-                    <div className="feature__content">
-                        <h2 className="h-staff">Who is One Man Chaos?</h2>
-                        <p className="muted">
-                            One Man Chaos is Wes Lambert—father, grandfather, longtime community leader, and retired youth coach. He co-built and served as president of the Matamoras Outdoor Community Hockey Rink and founded the TDS Bowl, a nonprofit charity. A self-taught drummer since 1979, Wes created the Video Drum Solo (VDS):
-                            a story told through pictures and video, amplified by a drum performance. His 45-minute drum show uses over 100 drums, lights, and visuals to celebrate education, perseverance, positivity, and the unparalleled beauty of our natural world.
-                        </p>
-                    </div>
-                </div>
+                <FeaturedContent {...featuredBioShort} />
             </Section>
 
             <Section padding="xl" alt>
@@ -92,11 +78,11 @@ const Home = () => {
                     {events.length ? (
                         <ul className="events__list">
                             {events.map((e, i) => (
-                            <li key={i} className="events__item">
-                                <div className="events__date">{e.date}</div>
-                                <div className="events__venue">{e.venue}</div>
-                                <div className="events__city">{e.city}</div>
-                            </li>
+                                <li key={i} className="events__item u-hover-elev">
+                                    <div className="events__date">{e.date}</div>
+                                    <div className="events__venue">{e.venue}</div>
+                                    <div className="events__city">{e.city}</div>
+                                </li>
                             ))}
                         </ul>
                     ) : (
@@ -117,20 +103,7 @@ const Home = () => {
             </Section>
 
             <Section padding="xl" alt>
-                <div className="cta">
-                    <h2 style={{ fontFamily: "Anton SC, system-ui, sans-serif" }}>Ready to bring the One-Man Drum Show to your event?</h2>
-                    <p className="muted">Fast confirmations • Flexible logistics • Family-friendly fun</p>
-                    <div className="cta__actions">
-                        <ActionButton 
-                            cfg={{ label: "Check Availability", href: "/contact" }} 
-                            variant="primary" 
-                        />
-                        <ActionButton 
-                            cfg={{ label: "See Packages", href: "/about#packages" }} 
-                            variant="secondary" 
-                        />
-                    </div>
-                </div>
+                <CTA />
             </Section>
         </div>
     );

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import * as Dialog from "@radix-ui/react-dialog";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 import Video from '../common/Video';
-import ActionButton from "./ActionButton";
+import ActionButton from "../common/ActionButton";
 import "../../styles/components/_hero.scss";
 
 const PosterPlaceholder = () => (

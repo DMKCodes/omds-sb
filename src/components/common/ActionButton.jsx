@@ -5,7 +5,9 @@ const ActionButton = ({ cfg, variant="primary" }) => {
     const className = variant === "primary" ? "c-button" : "c-button c-button--ghost";
 
     if (cfg.href) {
-        const isInternal = cfg.href.startsWith("/");
+        const href = typeof cfg?.href === "string" ? cfg.href : "";
+        const isInternal = href.startsWith("/");
+        
         return isInternal ? (
             <a className={className} href={cfg.href}>{cfg.label}</a>
         ) : (

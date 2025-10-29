@@ -1,46 +1,19 @@
-@use "../mixins" as *;
-@use "../variables" as *;
-
 .card {
-  --card-bg:        color-mix(in srgb, var(--color-surface) 88%, transparent);
+  --card-bg:        color-mix(in srgb, var(--color-surface, #0b1220) 88%, transparent);
   --card-border:    rgba(255,255,255,.32);
   --card-border-hi: rgba(255,255,255,.44);
-  --card-glow:      color-mix(in srgb, var(--color-primary) 55%, transparent);
-  --glow-ring:      2px;
-  --glow-bloom:     18px;
-  --glow-alpha:     .75;
-
-  --shadow-base:
-    0 8px 20px rgba(0,0,0,.45),
-    0 3px 10px rgba(0,0,0,.35),
-    0 0 0 1px rgba(255,255,255,.06) inset;
-
-  --shadow-hover:
-    0 22px 60px rgba(0,0,0,.60),
-    0 10px 28px rgba(0,0,0,.45),
-    0 0 0 1px rgba(255,255,255,.08) inset;
-
-  --shadow-down:
-    0 10px 28px rgba(0,0,0,.55),
-    0 4px 14px rgba(0,0,0,.38),
-    0 0 0 1px rgba(255,255,255,.08) inset;
 
   background: var(--card-bg);
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: clamp(1rem, 2.4vw, 1.25rem);
   display: grid;
   gap: .7rem;
 
-  box-shadow: var(--shadow-base);
-  transform: translateZ(0);
-  transition:
-    border-color .18s ease,
-    box-shadow .24s cubic-bezier(.2,.6,.2,1),
-    transform .18s cubic-bezier(.2,.6,.2,1);
-
   position: relative;
   isolation: isolate;
+
+  @extend .u-hover-elev !optional;
 }
 
 .card::before {
@@ -52,60 +25,17 @@
   mix-blend-mode: screen;
 }
 
-.card:hover {
-  border-color: var(--card-border-hi);
-  transform: translateY(-4px) scale(1.01);
-
-  box-shadow:
-    var(--shadow-hover),
-    0 0 0 var(--glow-ring) color-mix(in srgb, var(--card-glow) calc(var(--glow-alpha) * 100%), transparent),
-    0 0 calc(var(--glow-bloom) * 2) var(--glow-bloom)
-      color-mix(in srgb, var(--card-glow) calc(var(--glow-alpha) * 100%), transparent);
-}
-
-.card:active {
-  transform: translateY(-2px) scale(1.005);
-  box-shadow:
-    var(--shadow-down),
-    0 0 0 var(--glow-ring) color-mix(in srgb, var(--card-glow) .5, transparent),
-    0 0 calc(var(--glow-bloom) * 1.6) calc(var(--glow-bloom) * .8)
-      color-mix(in srgb, var(--card-glow) .5, transparent);
-}
-
-.card--link .card__link:focus-visible,
-.card:focus-within {
-  outline: 3px solid color-mix(in srgb, var(--card-glow) 70%, transparent);
-  outline-offset: 3px;
-  border-color: var(--card-border-hi);
-  box-shadow:
-    var(--shadow-hover),
-    0 0 0 var(--glow-ring) color-mix(in srgb, var(--card-glow) calc(var(--glow-alpha) * 100%), transparent),
-    0 0 calc(var(--glow-bloom) * 2) var(--glow-bloom)
-      color-mix(in srgb, var(--card-glow) calc(var(--glow-alpha) * 100%), transparent);
-}
-
 .card--elevated {
   border-color: var(--card-border-hi);
-  box-shadow:
-    var(--shadow-hover),
-    0 0 0 var(--glow-ring) color-mix(in srgb, var(--card-glow) .6, transparent),
-    0 0 calc(var(--glow-bloom) * 2) var(--glow-bloom)
-      color-mix(in srgb, var(--card-glow) .6, transparent);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card { transition: border-color .18s ease, box-shadow .24s ease; }
-  .card:hover, .card:active { transform: none; }
 }
 
 .card__media { display: flex; align-items: center; gap: .75rem; }
 
 .card__icon {
-  --icon-bg: color-mix(in srgb, var(--card-glow) 80%, transparent);
-  --icon-color: var(--color-text-inverted,#2AB3FF);
+  --icon-bg: color-mix(in srgb, var(--hover-elev-color, var(--color-primary)) 80%, transparent);
+  --icon-color: var(--color-text, #fff);
   display: inline-flex; align-items: center; justify-content: center;
-  width: 60px; 
-  height: 60px;
+  width: 60px; height: 60px;
   border-radius: 14px;
   background:
     radial-gradient(100% 100% at 50% 20%, color-mix(in srgb, var(--icon-bg) 60%, transparent), transparent 70%),
@@ -117,21 +47,16 @@
 .card__icon svg { width: 28px; height: 28px; color: var(--icon-color); }
 .card__icon svg path { fill: currentColor; }
 
-.card__title { margin: 0; font-size: clamp(1.08rem, 1.8vw, 1.25rem); line-height: 1.2; color: var(--color-text-inverted); }
+.card__title { 
+  margin: 0; 
+  font-size: clamp(1.08rem, 1.8vw, 1.25rem); 
+  line-height: 1.2; 
+  color: var(--color-text-inverted);
+}
 .card__text  { margin: 8px 0 0 0; color: var(--color-text-inverted); }
 .card__eyebrow {
-  font-size: .8rem; 
-  letter-spacing: .04em; 
+  font-size: .8rem;
+  letter-spacing: .04em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--color-text,#fff) 65%, transparent);
-}
-
-@supports not (mask-composite: exclude) {
-  .card::after { display: none; }
-  .card:hover,
-  .card:focus-within,
-  .card--elevated {
-    filter: drop-shadow(0 0 calc(var(--glow-blur) * 1.6) var(--card-glow))
-            drop-shadow(0 6px calc(var(--glow-blur) * 1.2) rgba(0,0,0,.4));
-  }
 }

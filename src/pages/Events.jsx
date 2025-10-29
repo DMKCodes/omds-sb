@@ -3,7 +3,6 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { buildSeo, renderHelmetTags } from "../lib/seo";
 import { ld, makeOrganization } from "../lib/schema";
 import Section from "../components/common/Section";
-import DrumButton from "../components/ui/DrumButtonTest";
 
 const Events = () => {
     const seo = buildSeo({
@@ -46,7 +45,6 @@ const Events = () => {
             <Section size="lg" padding="xl" alt>
                 <h1>Events Calendar</h1>
                 <p>See our upcoming events.</p>
-                <DrumButton as="a" href="/media" label="Go" />
             </Section>
         </div>
     );

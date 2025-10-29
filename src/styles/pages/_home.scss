@@ -3,7 +3,6 @@
 
 h2 { font-size: 2.4rem; }
 
-// Events teaser
 .events__list {
   list-style: none;
   margin: 0; padding: 0;
@@ -12,10 +11,10 @@ h2 { font-size: 2.4rem; }
 }
 .events__item {
   display: grid;
-  grid-template-columns: 9rem 1fr auto;
-  gap: .75rem;
+  grid-template-columns: auto 1fr auto;
+  gap: 2rem;
   align-items: center;
-  background: color-mix(in srgb, var(--color-surface, #0f172a) 85%, transparent);
+  background: var(--color-surface);
   border: 1px solid rgba(255,255,255,.08);
   border-radius: .5rem;
   padding: .65rem .75rem;
@@ -25,50 +24,7 @@ h2 { font-size: 2.4rem; }
 .events__venue { font-weight: 600; color: var(--color-text-inverted, #2AB3FF); }
 .events__city  { color: var(--color-text-inverted, #2AB3FF); }
 
-// CTA section
-.cta {
-  text-align: center;
-  background:
-    radial-gradient(200px 90px at 80% 0%, color-mix(in srgb, var(--color-primary,#2AB3FF) 20%, transparent), transparent 70%),
-    radial-gradient(150px 70px at 20% 100%, color-mix(in srgb, var(--color-accent,#2BFF88) 16%, transparent), transparent 70%),
-    color-mix(in srgb, var(--color-surface,#0f172a) 90%, transparent);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 1rem;
-  padding: clamp(1rem, 3vw, 2rem);
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
-.cta h2 {
-  color: var(--color-text-inverted);
-  margin: .6rem 0;
-}
-.cta .muted {
-  color: var(--color-text-inverted); 
-}
-.cta__actions {
-  display: flex;
-  gap: .6rem;
-  justify-content: center;
-  margin-top: .8rem;
-  flex-wrap: wrap;
-}
-
-.cta__actions .c-button, .c-button--ghost {
-  border: 2px solid var(--color-text-inverted);
-  box-shadow: 0.1em 0.1em var(--color-text-inverted);
-  color: var(--color-text-inverted);
-  &:hover { 
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em var(--color-text-inverted);
-  }
-}
-.cta__actions .c-button {
-  background: #00F0FF;
-}
-.cta__actions .c-button--ghost {
-  background: transparent;
-}
-
-.feature--bio {
+.feature {
   display: grid;
   gap: clamp(1rem, 3vw, 2rem);
   align-items: center;
@@ -78,20 +34,17 @@ h2 { font-size: 2.4rem; }
   @media (min-width: 56rem) {
     grid-template-columns: 1fr 1.1fr;
   }
-
   .feature__media {
     border-radius: var(--radius-lg, 16px);
     overflow: hidden;
     box-shadow: var(--shadow-card, 0 8px 28px rgba(15,23,42,.12));
   }
-
   .bio__img {
     display: block;
     max-height: 600px;
     width: auto;
     object-fit: contain;
   }
-
   .feature__content {
     display: grid;
     gap: clamp(.75rem, 2vw, 1rem);
