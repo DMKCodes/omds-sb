@@ -25,9 +25,18 @@
 
   &:focus-visible { box-shadow: 0 0 0 4px var(--_ring, $color-primary); }
 }
+.c-button__icon {
+  margin-left: .3rem;
+}
 
 .c-button--ghost {
   background: transparent;
   color: var(--color-text);
   border: 2px solid var(--color-text);
 }
+
+.c-button--accent {
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+

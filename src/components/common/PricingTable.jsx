@@ -9,7 +9,7 @@ const PricingTable = ({ plans = [] }) => {
                 {plans.map((p) => (
                     <article 
                         key={p.id} 
-                        className={`pricing__card ${p.popular ? "is-popular" : ""}`} aria-label={`${p.name} plan`}
+                        className={`pricing__card u-hover-elev ${p.popular ? "is-popular u-hover-elev--green" : ""}`} aria-label={`${p.name} plan`}
                     >
                         {p.popular && <div className="pricing__badge" aria-hidden="true">Most Popular</div>}
                         <h3 className="pricing__name">{p.name}</h3>
@@ -18,12 +18,6 @@ const PricingTable = ({ plans = [] }) => {
                         <ul className="pricing__features">
                             {p.features.map((f, i) => <li key={i}>{f}</li>)}
                         </ul>
-                        {p.cta?.href && (
-                            <ActionButton
-                                cfg={{ label: "Request information", href: "/contact" }} 
-                                variant="primary"
-                            />
-                        )}
                     </article>
                 ))}
             </div>
@@ -31,6 +25,12 @@ const PricingTable = ({ plans = [] }) => {
                 *Prices are estimated and may vary by date, travel, and technical requirements. We&apos;ll confirm details during booking.<br />
                 *Discounted pricing available for non-profits and other charitable organizations. Please mention this when completing our <a href="/contact">contact form</a>.
             </p>
+            <div className="action-container">
+                <ActionButton
+                    cfg={{ label: "Request information", href: "/contact" }} 
+                    variant="primary"
+                />
+            </div>
         </>
     );
 };

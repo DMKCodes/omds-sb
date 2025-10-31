@@ -1,0 +1,42 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.feature {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+
+  grid-template-columns: 1fr;
+
+  @media (min-width: 56rem) {
+    grid-template-columns: 1fr 1.1fr;
+  }
+  .feature__media {
+    border-radius: var(--radius-lg, 16px);
+    overflow: hidden;
+    box-shadow: var(--shadow-card, 0 8px 28px rgba(15,23,42,.12));
+  }
+  .bio__img {
+    display: block;
+    max-height: 600px;
+    width: auto;
+    object-fit: contain;
+  }
+  .feature__content {
+    display: grid;
+    gap: clamp(.75rem, 2vw, 1rem);
+
+    h2 { margin: 0; }
+  }
+}
+
+.feature__content-body {
+  margin: 0;
+}
+
+.feature__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: map-get($space, 3);
+  margin-top: .5rem;
+}

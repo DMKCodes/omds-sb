@@ -9,7 +9,7 @@ export function absoluteUrl(path = "/") {
 
 export function makeTitle(title) {
     if (!title) return SITE.name;
-    return `${title} — ${SITE.name}`;
+    return `${title} — ${SITE.name} — Pike County, PA`;
 };
 
 export function buildSeo({

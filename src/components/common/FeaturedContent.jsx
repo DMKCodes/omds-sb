@@ -15,13 +15,15 @@ const FeaturedContent = ({ mediaSrc, mediaAlt, title, content, cta, ctaHref, cta
             </div>
             <div className="feature__content">
                 <h2 className="h-staff">{title}</h2>
-                <p>{content}</p>
+                {content}
 
-                {cta && 
-                    <ActionButton 
-                        cfg={{ label: ctaLabel, href: ctaHref }}
-                        variant="primary"
-                    />
+                {cta &&
+                    <div className="feature__actions">
+                        <ActionButton 
+                            cfg={{ label: ctaLabel, href: ctaHref }}
+                            variant="primary"
+                        />
+                    </div>
                 }
             </div>
         </div>

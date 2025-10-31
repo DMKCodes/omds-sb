@@ -3,7 +3,7 @@ module.exports = {
     // Static routes to be indexed, when adding or renaming pages update this
     routes: [
         "/",
-        "/about",
+        "/info",
         "/media",
         "/events",
         "/faq",
@@ -15,7 +15,7 @@ module.exports = {
         "/":        { changefreq: "weekly", priority: 1.0 },
         "/events":  { changefreq: "weekly",  priority: 0.9 },
         "/media":   { changefreq: "monthly", priority: 0.7 },
-        "/about":   { changefreq: "yearly",  priority: 0.5 },
+        "/info":   { changefreq: "yearly",  priority: 0.5 },
         "/faq":     { changefreq: "yearly",  priority: 0.6 },
         "/contact": { changefreq: "yearly",  priority: 0.5 },
         "/404":     { changefreq: "yearly", priority: 0.4 },

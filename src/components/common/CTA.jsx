@@ -14,7 +14,7 @@ const CTA = () => {
                     variant="primary" 
                 />
                 <ActionButton 
-                    cfg={{ label: "See Packages", href: "/about#packages" }} 
+                    cfg={{ label: "See Packages", href: "/info#pricing" }} 
                     variant="secondary" 
                 />
             </div>

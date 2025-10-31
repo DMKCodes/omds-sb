@@ -24,7 +24,8 @@ const Footer = () => {
 
                 <nav className="footer__nav" aria-label="Footer">
                     <ul className="footer__links">
-                        <li><NavLink to="/about"   className="footer__link">About</NavLink></li>
+                        <h3 className="footer__links-heading">SITE MENU</h3>
+                        <li><NavLink to="/info"   className="footer__link">Info</NavLink></li>
                         <li><NavLink to="/media"   className="footer__link">Media</NavLink></li>
                         <li><NavLink to="/events"  className="footer__link">Events</NavLink></li>
                         <li><NavLink to="/contact" className="footer__link">Contact</NavLink></li>

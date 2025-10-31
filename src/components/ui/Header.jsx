@@ -7,7 +7,7 @@ import SpotlightLayer from "../ui/SpotlightLayer";
 import ThemeToggle from "../common/ThemeToggle";
 
 const links = [
-    { to: "/about", label: "ABOUT" },
+    { to: "info", label: "INFO" },
     { to: "/media", label: "MEDIA" },
     { to: "/events", label: "EVENTS" },
     { to: "/contact", label: "CONTACT" },

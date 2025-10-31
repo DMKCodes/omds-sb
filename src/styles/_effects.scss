@@ -50,6 +50,17 @@
   }
 }
 .u-hover-elev--bordered { border: 1px solid transparent; }
+.u-hover-elev--green {
+  &:hover,
+  &:focus-within {
+    border-color: var(--color-accent,#06B6D4);
+    box-shadow:
+      var(--elev-hover),
+      0 0 calc(var(--hover-elev-bloom) * 2) var(--hover-elev-bloom)
+      color-mix(in srgb, var(--color-accent) calc(var(--hover-elev-alpha) * 100%), transparent);
+    outline: 3px solid color-mix(in srgb, var(--color-accent) 70%, transparent);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .u-hover-elev,
