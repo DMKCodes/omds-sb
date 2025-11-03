@@ -1,6 +1,6 @@
 import React from "react";
 import Testimonial from "./Testimonial.jsx";
-import { testimonials } from "../../data/testimonials.js";
+import { testimonials } from "../../data/media.js";
 
 const TestimonialList = () => {
     const items = testimonials;
