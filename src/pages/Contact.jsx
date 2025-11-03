@@ -18,10 +18,10 @@ const Contact = () => {
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 
-            <Section size="sm" padding="xl" alt>
-                <h1>Contact</h1>
+            <Section size="sm" padding="sm" alt>
+                <h1 className="h-staff">Let&apos;s talk!</h1>
                 <p>Get in touch to see how we can help.</p>
-                <ContactForm action="https://formspree.io/f/yourIdHere" />
+                <ContactForm />
             </Section>
         </div>
     );

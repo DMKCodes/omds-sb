@@ -26,7 +26,7 @@ const Info = () => {
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 
-            <Section padding="xl" alt>
+            <Section padding="lg" alt>
                 <FeaturedContent {...featuredBioLong} />
             </Section>
 

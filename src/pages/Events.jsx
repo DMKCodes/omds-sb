@@ -3,6 +3,7 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { buildSeo, renderHelmetTags } from "../lib/seo";
 import { ld, makeOrganization } from "../lib/schema";
 import Section from "../components/common/Section";
+import ActionButton from "../components/common/ActionButton";
 
 const Events = () => {
 const seo = buildSeo({
@@ -16,15 +17,12 @@ const seo = buildSeo({
         <div className="container u-stack page">
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
-            <Section padding="xl" alt>
+            <Section padding="sm" alt>
+                <h1 className="h-staff">Upcoming Events</h1>
                 <div data-tockify-component="calendar" data-tockify-calendar="powerhouse.percussion" />
-                <button
-                    type="button"
-                    className="c-button"
-                    onClick={() => window._tkf?.openFullScreen?.({ name: "powerhouse.percussion" })}
-                >
-                    View Fullscreen Calendar
-                </button>
+                <div className="action-container">
+                    <ActionButton cfg={{ label: "Book your event", href: "/contact" }} variant="primary" />
+                </div>
             </Section>
         </div>
     );

@@ -20,6 +20,7 @@
 }
 label { 
     font-weight: 600; 
+    font-family: "Open Sans", system-ui, sans-serif;
 }
 input, select, textarea {
   width: 100%;
@@ -27,7 +28,8 @@ input, select, textarea {
   border: 1px solid rgba(0,0,0,.15);
   border-radius: 10px;
   background: #fff;
-  color: var(--color-text, #0F172A);
+  color: var(--color-text-inverted, #0F172A);
+  font-family: "Open Sans", system-ui, sans-serif;
 }
 input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid var(--color-accent, #06B6D4);

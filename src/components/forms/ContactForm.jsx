@@ -17,7 +17,6 @@ import "../../styles/pages/_contact.scss";
 
 const ContactForm = ({
     action,
-    method = "POST",
     fetchUrl,
     onSuccess,
     onError,
@@ -85,22 +84,17 @@ const ContactForm = ({
         <form
             className={`contact ${className}`}
             onSubmit={handleSubmit(onSubmit)}
-            action={action}
-            method={action ? method : undefined}
+            action="https://usebasin.com/f/4da2cdee83ad"
+            method="POST"
+            encType="multipart/form-data"
+            id="form"
             noValidate
-            // If using Netlify:
-            // data-netlify={action ? "true" : undefined}
-            // name="contact"
-
         >
             {/* Honeypot: visible only to bots */}
             <div className="hp" aria-hidden="true">
                 <label htmlFor="website">Website</label>
                 <input id="website" type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
             </div>
-
-            {/* If using Netlify: */}
-            {/* <input type="hidden" name="form-name" value="contact" /> */}
             
             <div className="grid">
                 <div className="field">
