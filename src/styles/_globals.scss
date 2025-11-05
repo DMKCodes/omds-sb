@@ -5,6 +5,7 @@
 
 @use "./pages/home" as *;
 @use "./pages/info" as *;
+@use "./pages/media" as *;
 @use "./pages/contact" as *;
 @use "./pages/privacy" as *;
 
@@ -161,6 +162,7 @@ body {
   }
 }
 
+// Action button containers
 .action-container {
   display: flex;
   flex-wrap: wrap;

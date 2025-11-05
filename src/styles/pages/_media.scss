@@ -1,0 +1,48 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.media-hero { max-width: $container-md; }
+
+.media-testimonials {
+  grid-template-columns: 1fr;
+  @media (min-width: map-get($bp, md)) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.quote {
+  display: grid; gap: .5rem;
+}
+.quote__mark { width: 24px; height: 24px; color: var(--color-primary); }
+.quote__text { margin: 0; }
+.quote__cite { font-size: .9rem; color: color-mix(in srgb, var(--color-text) 75%, transparent); }
+
+.media-grid {
+  --size: 180px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size), 1fr));
+  gap: clamp(.6rem, 2vw, 1rem);
+}
+
+.media-thumb {
+  padding: 0; border: 1px solid transparent; background: transparent; border-radius: 12px;
+  overflow: hidden; cursor: pointer;
+  img { display: block; width: 100%; height: auto; }
+}
+
+.media-videos {
+  display: grid; gap: clamp(.8rem, 2vw, 1rem);
+  grid-template-columns: 1fr;
+  @media (min-width: map-get($bp, md)) { grid-template-columns: repeat(2, 1fr); }
+}
+.media-video { aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; }
+.media-video__meta { margin-top: .5rem; color: color-mix(in srgb, var(--color-text) 80%, transparent); }
+
+.press-grid {
+  display: grid; gap: clamp(.8rem, 2vw, 1rem);
+  grid-template-columns: 1fr;
+  @media (min-width: map-get($bp, lg)) { grid-template-columns: repeat(3, 1fr); }
+}
+.press__body { display: grid; gap: .25rem; }
+.press__source {
+  font-size: .85rem;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}

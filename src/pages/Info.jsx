@@ -30,7 +30,7 @@ const Info = () => {
                 <FeaturedContent {...featuredBioLong} />
             </Section>
 
-            <Section padding="lg" alt>
+            <Section padding="lg" alt id="pricing">
                 <h2 className="h-staff">Packages &amp; Pricing</h2>
                 <PricingTable plans={plans} />
             </Section>
@@ -40,7 +40,7 @@ const Info = () => {
                 <FAQAccordion items={faq} />
             </Section>
 
-            <Section padding="xl" alt>
+            <Section padding="lg" alt>
                 <CTA />
             </Section>
         </div>

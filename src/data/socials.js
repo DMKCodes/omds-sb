@@ -1,29 +1,17 @@
 import {
     faFacebook,
     faInstagram,
-    faBluesky,
-    faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
 export const socials = [
     {
         name: "Facebook",
-        link: "https://example.com",
+        link: "https://www.facebook.com/profile.php?id=61583347040516",
         icon: faFacebook
     },
     {
         name: "Instagram",
-        link: "https://example.com",
+        link: "https://www.instagram.com/onemanchaosomc/",
         icon: faInstagram
     },
-    {
-        name: "Bluesky",
-        link: "https://example.com",
-        icon: faBluesky
-    },
-    {
-        name: "Twitter",
-        link: "https://example.com",
-        icon: faTwitter
-    }
 ];

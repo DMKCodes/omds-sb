@@ -1,26 +1,14 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-h2 { font-size: 2.4rem; }
-
-.events__list {
-  list-style: none;
-  margin: 0; padding: 0;
-  display: grid;
-  gap: .5rem;
-}
-.events__item {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 2rem;
+.events {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background: var(--color-surface);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: .5rem;
-  padding: .65rem .75rem;
-  margin-bottom: 1rem;
 }
-.events__date  { font-weight: 700; color: var(--color-text-inverted, #2AB3FF); }
-.events__venue { font-weight: 600; color: var(--color-text-inverted, #2AB3FF); }
-.events__city  { color: var(--color-text-inverted, #2AB3FF); }
-.no-events-notice { margin: 0; font-style: italic; }
+.calendar-mini {
+  width: 500px;
+  height: auto;
+}
+

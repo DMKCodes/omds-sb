@@ -12,7 +12,7 @@ export const featuredBioShort = {
         </>,
     cta: true,
     ctaHref: "/info",
-    ctaLabel: "Learn more",
+    ctaLabel: "Learn More",
 };
 
 export const featuredBioLong = {

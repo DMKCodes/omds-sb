@@ -4,8 +4,8 @@ import ActionButton from "./ActionButton";
 const CTA = () => {
     return (
         <div className="cta u-hover-elev">
-            <h2 style={{ fontFamily: "Anton SC, system-ui, sans-serif" }}>
-                Ready to bring the One-Man Drum Show to your event?
+            <h2 style={{ fontFamily: "Anton SC, system-ui, sans-serif", letterSpacing: ".1rem" }}>
+                Ready to bring Powerhouse Percussion to your event?
             </h2>
             <p className="muted">Fast confirmations • Flexible logistics • Family-friendly fun</p>
             <div className="cta__actions">

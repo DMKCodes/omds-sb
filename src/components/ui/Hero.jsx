@@ -80,7 +80,7 @@ const Hero = ({
                     <motion.div 
                         className="hero__media" 
                         variants={animationItem} 
-                        initial="hidden" 
+                        initial="hidden"
                         animate="show"
                     >
                         {videoSrc ? (

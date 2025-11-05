@@ -19,6 +19,7 @@ const seo = buildSeo({
             <script type="application/ld+json">{ld(makeOrganization())}</script>
             <Section padding="sm" alt>
                 <h1 className="h-staff">Upcoming Events</h1>
+                <p><i>Now booking for 2026. Claim your date today!</i></p>
                 <div data-tockify-component="calendar" data-tockify-calendar="powerhouse.percussion" />
                 <div className="action-container">
                     <ActionButton cfg={{ label: "Book your event", href: "/contact" }} variant="primary" />

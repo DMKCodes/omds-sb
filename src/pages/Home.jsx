@@ -4,7 +4,6 @@ import { Helmet } from "@dr.pogodin/react-helmet";
 import { buildSeo, renderHelmetTags } from "../lib/seo";
 import { ld, makeOrganization } from "../lib/schema";
 import { featuredBioShort } from "../data/featured";
-import { events } from "../data/events";
 import { infoCards } from "../data/info-cards";
 
 import Hero from "../components/ui/Hero";
@@ -28,6 +27,7 @@ const Home = () => {
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 
+            {/* Hero */}
             <Section padding="xl" alt>
                 <Hero
                     as="div"
@@ -35,14 +35,15 @@ const Home = () => {
                     align="left"
                     title="POSITIVITY THROUGH PERCUSSION."
                     sub="One man. One hundred drums. One unforgettable performance."
-                    primary={{ label: "Book now", href: "/contact" }}
-                    secondary={{ label: "Preview the show", href: "/media" }}
+                    primary={{ label: "Book Now", href: "/contact" }}
+                    secondary={{ label: "Preview the Show", href: "/media" }}
                     posterSrc="/assets/media/promo-pic-test.jpeg"
-                    videoSrc="/assets/media/placeholder-vid.mp4"
+                    videoSrc="/assets/media/performance-video.mp4"
                 />
             </Section>
 
-            <Section padding="xl" alt>
+            {/* Info Cards */}
+            <Section padding="lg" alt>
                 <div className="grid grid--3">
                     {infoCards.map((c, i) => (
                         <Card 
@@ -55,48 +56,46 @@ const Home = () => {
                     ))}
                 </div>
             </Section>
-
-            <Section padding="xl" alt>
+            
+            {/* Featured Content */}
+            <Section padding="lg" alt>
                 <FeaturedContent {...featuredBioShort} />
             </Section>
-
-            <Section padding="xl" alt>
+            
+            {/* Events Teaser (Replace) */}
+            <Section padding="lg" alt>
                 <div className="events">
                     <h2 className="h-staff">Upcoming Events</h2>
-                    {events.length ? (
-                        <ul className="events__list">
-                            {events.map((e, i) => (
-                                <li key={i} className="events__item u-hover-elev">
-                                    <div className="events__date">{e.date}</div>
-                                    <div className="events__venue">{e.venue}</div>
-                                    <div className="events__city">{e.city}</div>
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p className="no-events-notice">New dates coming soon! Check back shortly.</p>
-                    )}
+                    <div className="calendar-mini">
+                        <div 
+                            data-tockify-component="mini" 
+                            data-tockify-calendar="powerhouse.percussion"
+                        ></div>
+                    </div>
                     <div className="action-container">
                         <ActionButton
-                            cfg={{ label: "View all events", href: "/events" }}
+                            cfg={{ label: "View All Events", href: "/events" }}
                             variant="primary"
                         />
                     </div>
+                    
                 </div>
             </Section>
-
-            <Section padding="xl" alt>
+            
+            {/* Testimonials Teaser */}
+            <Section padding="lg" alt>
                 <h2 className="h-staff">What People Are Saying</h2>
                 <TestimonialList />
                 <div className="action-container">
                     <ActionButton
-                        cfg={{ label: "Media & reviews", href: "/media" }}
+                        cfg={{ label: "Media & Reviews", href: "/media" }}
                         variant="primary"
                     />
                 </div>
             </Section>
-
-            <Section padding="xl" alt>
+            
+            {/* CTA */}
+            <Section padding="lg" alt>
                 <CTA />
             </Section>
         </div>
