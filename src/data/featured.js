@@ -7,7 +7,10 @@ export const featuredBioShort = {
     content: 
         <>
             <p className="feature__content-body">
-                One Man Chaos is Wes Lambert—father, grandfather, longtime community leader, and retired youth coach. He co-built and served as president of the Matamoros Outdoor Community Hockey Rink and founded the TDS Bowl, a nonprofit charity. A self-taught drummer since 1979, Wes created the Video Drum Solo (VDS): a story told through pictures and video, amplified by a drum performance. His One Man Drum Show uses over 100 drums, lights, and visuals to celebrate education, perseverance, and the teachers who inspire us.
+                One Man Chaos is Wes Lambert—father, grandfather, longtime community leader, and retired youth coach. He co-built and served as president of the Matamoros Outdoor Community Hockey Rink and founded the TDS Bowl, a nonprofit charity.
+            </p>
+            <p className="feature__content-body">
+                A self-taught drummer since 1979, Wes created the Video Drum Solo (VDS): a story told through pictures and video, amplified by a drum performance. His One Man Drum Show uses over 100 drums, lights, and visuals to celebrate education, perseverance, and the teachers who inspire us.
             </p>
         </>,
     cta: true,

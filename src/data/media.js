@@ -34,24 +34,16 @@ export const videos = [
     {
         src: "/assets/media/performance-video2.mp4",
         poster: "/assets/media/wes-drums-suit.jpg",
-        title: "VDS Highlight",
+        title: "Show Teaser 2",
     },
 ];
 
 export const press = [
     {
         title: "Holy Trinity Church to hold 'One Man Chaos' drum show",
-        summary: "A feature on OMC's Video Drum Solo format and how it energizes community events.",
-        source: "Milford Times",
-        href: "https://example.com/article-1",
-        icon: faNewspaper,
-    },
-    {
-        title: "Education Through Rhythm: Positivity and Percussion",
-        summary:
-        "How Wes uses visuals + drums to inspire students about practice and perseverance.",
-        source: "NEPA Education Weekly",
-        href: "https://example.com/article-2",
+        summary: "A feature on a local charity performance of the One Man Drum Show.",
+        source: "Pike County Courier",
+        href: "https://www.pikecountycourier.com/entertainment/holy-trinity-church-to-hold-one-man-chaos-drum-show-XK4286891",
         icon: faNewspaper,
     },
 ]

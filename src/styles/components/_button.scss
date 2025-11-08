@@ -2,41 +2,68 @@
 @use "../variables" as *;
 
 .c-button {
+  --btn-font: 0.95rem;
+  --btn-py:   0.6rem;
+  --btn-px:   0.9rem;
+  --btn-bw:   2px;
+  --btn-shadow-x: 0.08em;
+  --btn-shadow-y: 0.08em;
+
   background: var(--color-primary);
   color: var(--color-text);
   font-family: inherit;
-  padding: 0.6em 1.3em;
   font-weight: 700;
-  font-size: 18px;
-  border: 3px solid var(--color-text);
+  font-size: var(--btn-font);
+  padding: var(--btn-py) var(--btn-px);
+  border: var(--btn-bw) solid var(--color-text);
   border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em var(--color-text);
+  box-shadow: var(--btn-shadow-x) var(--btn-shadow-y) var(--color-text);
   cursor: pointer;
   text-decoration: none;
+  line-height: 1.1;
 
-  &:hover { 
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: 0.15em 0.15em var(--color-text);
+  &:hover {
+    transform: translate(calc(-1 * var(--btn-shadow-x) / 2), calc(-1 * var(--btn-shadow-y) / 2));
+    box-shadow: calc(var(--btn-shadow-x) * 1.5) calc(var(--btn-shadow-y) * 1.5) var(--color-text);
   }
   &:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: 0.05em 0.05em;
+    transform: translate(calc(var(--btn-shadow-x) / 2), calc(var(--btn-shadow-y) / 2));
+    box-shadow: calc(var(--btn-shadow-x) * .6) calc(var(--btn-shadow-y) * .6);
   }
 
   &:focus-visible { box-shadow: 0 0 0 4px var(--_ring, $color-primary); }
 }
-.c-button__icon {
-  margin-left: .3rem;
+
+@include respond-to(sm) {
+  .c-button {
+    --btn-font: 1rem;
+    --btn-py:   0.55rem;
+    --btn-px:   1.05rem;
+    --btn-bw:   2.5px;
+    --btn-shadow-x: 0.09em;
+    --btn-shadow-y: 0.09em;
+  }
 }
+@include respond-to(md) {
+  .c-button {
+    --btn-font: 1.125rem;
+    --btn-py:   0.6rem;
+    --btn-px:   1.3rem;
+    --btn-bw:   3px;
+    --btn-shadow-x: 0.1em;
+    --btn-shadow-y: 0.1em;
+  }
+}
+
+.c-button__icon { margin-left: .35em; font-size: .95em; }
 
 .c-button--ghost {
   background: transparent;
   color: var(--color-text);
-  border: 2px solid var(--color-text);
+  border: var(--btn-bw) solid var(--color-text);
 }
 
 .c-button--accent {
   background: var(--color-accent);
-  border: 2px solid var(--color-accent);
+  border: var(--btn-bw) solid var(--color-accent);
 }
-

@@ -1,16 +1,34 @@
-@use "../mixins" as *;
 @use "../variables" as *;
+@use "../mixins" as *;
 
-.section--pad-md { padding-block: s(6)};
-.section--pad-lg { padding-block: s(7)};
-.section--pad-xl { padding-block: s(8)};
+.section--pad-md { 
+  padding-block: clamp(s(4), 3vw + s(3), s(6));
+}
+
+.section--pad-lg { 
+  padding-block: clamp(s(5), 4vw + s(3), s(7));
+}
+
+.section--pad-xl { 
+  padding-block: clamp(s(5), 5vw + s(3), s(7));
+}
+
+@include respond-to(sm) {
+  .section--pad-md { padding-block: s(6); }  /* 2rem */
+  .section--pad-lg { padding-block: s(7); }  /* 3rem */
+  .section--pad-xl { padding-block: s(7); }  /* 3rem */
+}
 
 @include respond-to(md) {
-  .section--pad-md { padding-block: s(7); }
-  .section--pad-lg { padding-block: s(8); }
-  .section--pad-xl { padding-block: calc(#{s(8)} + 1rem); }
+  .section--pad-md { padding-block: s(7); }              /* 3rem */
+  .section--pad-lg { padding-block: s(8); }              /* 4rem */
+  .section--pad-xl { padding-block: calc(#{s(8)} + 1rem); } /* 5rem */
 }
 
-.section--alt {
-    background: var(--color-bg, #fff);
+.section--pad-md > .container,
+.section--pad-lg > .container,
+.section--pad-xl > .container {
+  padding-inline: clamp(1rem, 4vw, 2rem);
 }
+
+.section--alt { background: var(--color-bg, #fff); }

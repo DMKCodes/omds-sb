@@ -20,7 +20,7 @@ const Contact = () => {
 
             <Section size="sm" padding="sm" alt>
                 <h1 className="h-staff">Let&apos;s talk!</h1>
-                <p>Get in touch to see how we can help.</p>
+                <p>Ready to book for your event? Have questions? We can&apos;t wait to hear from you.</p>
                 <ContactForm />
             </Section>
         </div>

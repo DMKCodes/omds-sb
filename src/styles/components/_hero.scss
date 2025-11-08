@@ -181,3 +181,9 @@
   height: auto;
   aspect-ratio: 16 / 9;
 }
+
+.hero__actions .c-button--ghost {
+  border: 3px solid var(--color-text);
+  box-shadow: 0.1em 0.1em var(--color-text);
+  color: var(--color-text);
+}

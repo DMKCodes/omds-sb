@@ -44,5 +44,16 @@
 .press__body { display: grid; gap: .25rem; }
 .press__source {
   font-size: .85rem;
-  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  color: color-mix(in srgb, var(--color-text-inverted) 70%, transparent);
+  font-weight: bold;
+}
+
+.card { padding: 1.2rem !important; }
+.card__icon {
+  min-width: 60px;
+  margin-bottom: .6rem;
+}
+.card__footer {
+  display: flex;
+  justify-content: center;
 }
