@@ -8,7 +8,7 @@ const Footer = () => {
 
     return (
         <footer className="site-footer" role="contentinfo">
-            <div className="container footer__grid">
+            <div className="container footer__content">
                 <div className="footer__brand">
                     <Link to="/" className="footer__logo">
                         <img
@@ -46,13 +46,14 @@ const Footer = () => {
                     </p>
                 </address>
                 
-
-                <ActionButton
-                    cfg={{ label: "Book now", href: "/contact" }}
-                    variant="primary"
-                    className="footer__cta"
-                    data-spotlight
-                />
+                <div className="action-container">
+                    <ActionButton
+                        cfg={{ label: "Book now", href: "/contact" }}
+                        variant="primary"
+                        className="footer__cta"
+                        data-spotlight
+                    />
+                </div>
             </div>
 
             <div className="footer__legal">

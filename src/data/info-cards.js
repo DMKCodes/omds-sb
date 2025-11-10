@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb, faCalendarDays } from "@fortawesome/free-regular-svg-icons";
-import { faSchool } from "@fortawesome/free-solid-svg-icons";
+import { faSchool, faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
 
 export const infoCards = [
     {
@@ -22,6 +22,6 @@ export const infoCards = [
     {
         title: "School & Nonprofit Discounts",
         text: "Powerhouse Percussion is proud to offer additional discounts for collaborations with public schools and charitable organizations. ",
-        media: <span className="card__icon"><FontAwesomeIcon icon={faCalendarDays} /></span>,
+        media: <span className="card__icon"><FontAwesomeIcon icon={faHandHoldingDollar} /></span>,
     },
 ];

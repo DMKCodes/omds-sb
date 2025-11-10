@@ -22,12 +22,12 @@ const PricingTable = ({ plans = [] }) => {
                 ))}
             </div>
             <p className="pricing__note">
-                *Prices are estimated and may vary by date, travel, and technical requirements. We&apos;ll confirm details during booking.<br />
+                *Prices are estimated and may vary by date, travel, and technical requirements. We&apos;ll confirm details during booking.<br /><br />
                 *Discounted pricing available for non-profits and other charitable organizations. Please mention this when completing our <a href="/contact">contact form</a>.
             </p>
             <div className="action-container">
                 <ActionButton
-                    cfg={{ label: "Request information", href: "/contact" }} 
+                    cfg={{ label: "Request Information", href: "/contact" }} 
                     variant="primary"
                 />
             </div>

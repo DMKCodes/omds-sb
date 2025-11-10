@@ -28,12 +28,12 @@ const Home = () => {
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 
             {/* Hero */}
-            <Section padding="xl" alt>
+            <Section id="home-hero" padding="xl" alt>
                 <Hero
                     as="div"
                     contained={false}
                     align="left"
-                    title="POSITIVITY THROUGH PERCUSSION."
+                    title="POSITIVITY THROUGH PERCUSSION"
                     sub="One man. One hundred drums. One unforgettable performance."
                     primary={{ label: "Book Now", href: "/contact" }}
                     secondary={{ label: "Preview the Show", href: "/media" }}
@@ -43,7 +43,7 @@ const Home = () => {
             </Section>
 
             {/* Info Cards */}
-            <Section padding="lg" alt>
+            <Section id="home-info" padding="lg" alt>
                 <div className="grid grid--3">
                     {infoCards.map((c, i) => (
                         <Card 
@@ -58,12 +58,12 @@ const Home = () => {
             </Section>
             
             {/* Featured Content */}
-            <Section padding="lg" alt>
+            <Section id="home-feature" padding="lg" alt>
                 <FeaturedContent {...featuredBioShort} />
             </Section>
             
             {/* Events Teaser (Replace) */}
-            <Section padding="lg" alt>
+            <Section id="home-events" padding="lg" alt>
                 <div className="events">
                     <h2 className="h-staff">Upcoming Events</h2>
                     <div className="calendar-mini">
@@ -83,7 +83,7 @@ const Home = () => {
             </Section>
             
             {/* Testimonials Teaser */}
-            <Section padding="lg" alt>
+            <Section id="home-tst" padding="lg" alt>
                 <h2 className="h-staff">What People Are Saying</h2>
                 <TestimonialList />
                 <div className="action-container">
@@ -95,7 +95,7 @@ const Home = () => {
             </Section>
             
             {/* CTA */}
-            <Section padding="lg" alt>
+            <Section id="home-cta" padding="lg" alt>
                 <CTA />
             </Section>
         </div>

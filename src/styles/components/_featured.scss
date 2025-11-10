@@ -21,12 +21,22 @@
     max-height: 600px;
     width: auto;
     object-fit: contain;
+
+    @include respond-down(md) {
+      justify-self: center;
+    }
   }
   .feature__content {
     display: grid;
     gap: clamp(.75rem, 2vw, 1rem);
 
     h2 { margin: 0; }
+  }
+}
+
+.feature__content .h-staff {
+  @include respond-down(md) {
+    margin-top: 2rem !important;
   }
 }
 

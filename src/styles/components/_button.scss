@@ -3,7 +3,7 @@
 
 .c-button {
   --btn-font: 0.95rem;
-  --btn-py:   0.6rem;
+  --btn-py:   0.7rem;
   --btn-px:   0.9rem;
   --btn-bw:   2px;
   --btn-shadow-x: 0.08em;
@@ -21,6 +21,8 @@
   cursor: pointer;
   text-decoration: none;
   line-height: 1.1;
+  max-height: 50px;
+  text-wrap: nowrap;
 
   &:hover {
     transform: translate(calc(-1 * var(--btn-shadow-x) / 2), calc(-1 * var(--btn-shadow-y) / 2));
@@ -33,18 +35,17 @@
 
   &:focus-visible { box-shadow: 0 0 0 4px var(--_ring, $color-primary); }
 }
-
-@include respond-to(sm) {
+@include respond-down(sm) {
   .c-button {
     --btn-font: 1rem;
-    --btn-py:   0.55rem;
+    --btn-py:   0.7rem;
     --btn-px:   1.05rem;
     --btn-bw:   2.5px;
     --btn-shadow-x: 0.09em;
     --btn-shadow-y: 0.09em;
   }
 }
-@include respond-to(md) {
+@include respond-down(md) {
   .c-button {
     --btn-font: 1.125rem;
     --btn-py:   0.6rem;
@@ -61,9 +62,11 @@
   background: transparent;
   color: var(--color-text);
   border: var(--btn-bw) solid var(--color-text);
+  max-height: 50px;
 }
 
 .c-button--accent {
   background: var(--color-accent);
   border: var(--btn-bw) solid var(--color-accent);
+  max-height: 50px;
 }

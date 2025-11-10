@@ -1,26 +1,34 @@
 @use "../_variables" as *;
 
+#contact-form {
+  margin-bottom: 3rem;
+}
+
+#contact-form h1 {
+  margin-bottom: 0;
+}
+
 .contact { 
-    display: grid; 
-    gap: 1rem;
-    max-width: --container-sm;
+  display: grid; 
+  gap: 1rem;
+  max-width: --container-sm;
 }
 .grid { 
-    display: grid; 
-    gap: 1rem; 
-    grid-template-columns: 1fr; 
+  display: grid; 
+  gap: 1rem; 
+  grid-template-columns: 1fr; 
 }
 @media (min-width: 48rem) { 
-    .grid { grid-template-columns: repeat(2, 1fr); } 
+  .grid { grid-template-columns: repeat(2, 1fr); } 
 }
 
 .field { 
-    display: grid; 
-    gap: .375rem; 
+  display: grid; 
+  gap: .375rem; 
 }
 label { 
-    font-weight: 600; 
-    font-family: "Open Sans", system-ui, sans-serif;
+  font-weight: 600; 
+  font-family: "Open Sans", system-ui, sans-serif;
 }
 input, select, textarea {
   width: 100%;
@@ -36,29 +44,29 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline-offset: 2px;
 }
 .actions { 
-    display: flex; 
-    align-items: center; 
-    gap: .75rem; 
-    margin-top: .5rem; 
+  display: flex; 
+  align-items: center; 
+  gap: .75rem; 
+  margin-top: .5rem; 
 }
 .form-note { 
-    margin: 0; 
-    opacity: .8; 
+  margin: 0; 
+  opacity: .8; 
 }
 .sr-only { 
-    position: absolute; 
-    width: 1px; 
-    height: 1px; 
-    overflow: hidden; 
-    clip: rect(1px,1px,1px,1px); 
-    white-space: nowrap; 
+  position: absolute; 
+  width: 1px; 
+  height: 1px; 
+  overflow: hidden; 
+  clip: rect(1px,1px,1px,1px); 
+  white-space: nowrap; 
 }
 
 .hp { 
-    position: absolute; 
-    left: -9999px; 
-    top: auto; 
-    width: 1px; 
-    height: 1px; 
-    overflow: hidden; 
+  position: absolute; 
+  left: -9999px; 
+  top: auto; 
+  width: 1px; 
+  height: 1px; 
+  overflow: hidden; 
 }

@@ -1,15 +1,69 @@
 @use "variables" as *;
 
-/* Function to read from spacing map */
-@function s($key) { @return map-get($space, $key); }
-
-/* Media query handler */
-@mixin respond-to($name) {
-  $w: map-get($bp, $name);
-  @if $w { @media (min-width: $w) { @content; } }
+/* Spacing */
+@function s($key) {
+  $val: map-get($space, $key);
+  @if $val == null {
+    @warn "s(#{$key}) not found in $space map.";
+  }
+  @return $val;
 }
 
-/* CSS helper w/ fallback */
+/* Breakpoints */
+@function bp($key) {
+  $val: map-get($bp, $key);
+  @if $val == null {
+    @warn "bp(#{$key}) not found in $bp map.";
+  }
+  @return $val;
+}
+
+/* Min-width */
+@mixin respond-to($name) {
+  $w: bp($name);
+  @if $w {
+    @media (min-width: $w) { @content; }
+  } @else {
+    @content;
+  }
+}
+
+/* Max-width (just below the breakpoint) */
+@mixin respond-down($name) {
+  $w: bp($name);
+  @if $w {
+    @media (max-width: calc(#{$w} - 0.02rem)) { @content; }
+  } @else {
+    @content;
+  }
+}
+
+/* Between two breakpoints, inclusive of lower bound */
+@mixin respond-between($from, $to) {
+  $min: bp($from);
+  $max: bp($to);
+  @if $min and $max {
+    @media (min-width: $min) and (max-width: calc(#{$max} - 0.02rem)) { @content; }
+  } @else {
+    @content;
+  }
+}
+
+/* Generic MQ to pass custom query string */
+@mixin mq($query) {
+  @media #{$query} { @content; }
+}
+
+/* Motion & color-scheme helpers */
+@mixin reduce-motion {
+  @media (prefers-reduced-motion: reduce) { @content; }
+}
+
+@mixin color-scheme($scheme) {
+  @media (prefers-color-scheme: #{$scheme}) { @content; }
+}
+
+/* CSS var with fallback */
 @function v($name, $fallback) {
   @return var(#{$name}, #{$fallback});
 }

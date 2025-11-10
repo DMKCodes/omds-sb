@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/components/_button.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
 

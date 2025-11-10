@@ -13,6 +13,11 @@
   color: var(--color-text-inverted);
   margin: .6rem 0;
   font-size: 2.4rem;
+  line-height: 1.1;
+
+  @include respond-down(sm) {
+    font-size: 2rem;
+  }
 }
 .cta .muted {
   color: var(--color-text-inverted); 

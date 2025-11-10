@@ -12,7 +12,6 @@
     margin: 0.5rem 0;
 }
 .tst__quote { 
-    font-size: clamp(1rem, .95rem + .4vw, 1.25rem); 
     margin: 0; 
 }
 .tst__byline { 
@@ -31,7 +30,12 @@
 }
 .tst__role { 
     font-size:.875rem; 
-    opacity:.75; 
+    opacity:.75;
+
+    @include respond-down(sm) {
+        line-height: 1.2;
+        margin-top: .2rem;
+    }
 }
 
 .tst-list {

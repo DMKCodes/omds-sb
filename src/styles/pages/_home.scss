@@ -6,9 +6,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include respond-down(sm) {
+    align-items: start !important;
+  }
 }
 .calendar-mini {
   width: 500px;
   height: auto;
+
+  @include respond-down(sm) {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+.events .action-container {
+  @include respond-down(sm) {
+    margin: 0 !important;
+  }
+}
+
+#home-tst .action-container {
+  @include respond-down(lg) {
+    justify-self: start;
+  }
 }
 

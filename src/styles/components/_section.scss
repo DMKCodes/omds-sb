@@ -13,7 +13,7 @@
   padding-block: clamp(s(5), 5vw + s(3), s(7));
 }
 
-@include respond-to(sm) {
+@include respond-down(sm) {
   .section--pad-md { padding-block: s(6); }  /* 2rem */
   .section--pad-lg { padding-block: s(7); }  /* 3rem */
   .section--pad-xl { padding-block: s(7); }  /* 3rem */

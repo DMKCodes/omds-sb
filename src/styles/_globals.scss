@@ -128,17 +128,10 @@ body {
 .page {
   padding-block: clamp(s(3), 2.5vw + s(2), s(5));
   padding-inline: clamp(.75rem, 4vw, 1.25rem);
-}
-@media (min-width: map-get($bp, sm)) {
-  .page {
+
+  @include respond-down(lg) {
     padding-block: s(5);
     padding-inline: clamp(1rem, 3vw, 2rem);
-  }
-}
-@media (min-width: map-get($bp, md)) {
-  .page {
-    padding-inline: 0;
-    padding-block: s(6);
   }
 }
 

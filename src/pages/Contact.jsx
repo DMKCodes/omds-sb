@@ -18,7 +18,7 @@ const Contact = () => {
             {renderHelmetTags(Helmet, seo)}
             <script type="application/ld+json">{ld(makeOrganization())}</script>
 
-            <Section size="sm" padding="sm" alt>
+            <Section id="contact-form" size="sm" padding="sm" alt>
                 <h1 className="h-staff">Let&apos;s talk!</h1>
                 <p>Ready to book for your event? Have questions? We can&apos;t wait to hear from you.</p>
                 <ContactForm />

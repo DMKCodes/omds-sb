@@ -1,3 +1,6 @@
+@use "../_variables" as *;
+@use "../_mixins" as *;
+
 .card {
   --card-bg:        color-mix(in srgb, var(--color-surface, #0b1220) 88%, transparent);
   --card-border:    rgba(255,255,255,.32);
@@ -30,8 +33,11 @@
 .card__icon {
   --icon-bg: color-mix(in srgb, var(--hover-elev-color, var(--color-primary)) 80%, transparent);
   --icon-color: var(--color-text, #fff);
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 60px; height: 60px;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  width: 60px; 
+  height: 60px;
   border-radius: 14px;
   background:
     radial-gradient(100% 100% at 50% 20%, color-mix(in srgb, var(--icon-bg) 60%, transparent), transparent 70%),
@@ -39,8 +45,22 @@
   box-shadow:
     0 10px 28px rgba(0,0,0,.35),
     inset 0 0 24px color-mix(in srgb, var(--icon-color) 38%, transparent);
+
+  @include respond-down(md) {
+    width: 72px;
+    height: 72px;
+  }
 }
-.card__icon svg { width: 28px; height: 28px; color: var(--icon-color); }
+.card__icon svg { 
+  width: 28px; 
+  height: 28px; 
+  color: var(--icon-color);
+
+  @include respond-down(md) {
+    width: 36px;
+    height: 36px;
+  }
+}
 .card__icon svg path { fill: currentColor; }
 
 .card__title { 
@@ -48,6 +68,10 @@
   font-size: clamp(1.08rem, 1.8vw, 1.25rem); 
   line-height: 1.2; 
   color: var(--color-text-inverted);
+
+  @include respond-down(md) {
+    font-size: 1.4rem;
+  }
 }
 .card__text  { margin: 8px 0 0 0; color: var(--color-text-inverted); }
 .card__eyebrow {
