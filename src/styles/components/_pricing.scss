@@ -20,7 +20,7 @@ display: grid;
   box-shadow: $shadow-card; 
   padding: map-get($space, 5); 
   display: grid; 
-  gap: map-get($space, 4); 
+  gap: map-get($space, 2); 
   position: relative; 
 }
 .pricing__badge { 
@@ -50,7 +50,7 @@ display: grid;
   margin: 0; 
   padding-left: 1rem; 
   display: grid; 
-  gap: .25rem; 
+  gap: .15rem; 
 }
 .is-popular { 
   outline: 3px solid var(--color-accent,#06B6D4); 

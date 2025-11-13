@@ -18,7 +18,10 @@ const Media = () => {
         title: "Media & Testimonials — One Man Drum Show | Pike County, Pennsylvania",
         description: "Watch performance clips, browse photos, and read testimonials for Powerhouse Percussion's One Man Drum Show. See why schools and event organizers love to book this immersive and educational drum show.",
         path: "/media",
-        image: "/assets/example.jpg",
+        image: "/assets/og/og-image.png",
+        imageAlt: "Powerhouse Percussion logo",
+        imageWidth: 1200,
+        imageHeight: 630
     });
 
     return (

@@ -1,99 +1,63 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useForm } from "react-hook-form";
-import "../../styles/pages/_contact.scss";
-
-/*
-    Props:
-    - action: string | undefined (provider endpoint)
-    - method: "POST" | "GET" (default: POST)
-    - fetchUrl: string | undefined
-    - onSuccess?: (data) => void
-    - onError?: (err) => void
-    - audienceOptions?: string[]
-    Anti-spam:
-    - honeypot field (offscreen input)
-    - time-to-submit >= 3000ms
-*/
 
 const ContactForm = ({
-    action,
-    fetchUrl,
-    onSuccess,
-    onError,
-    audienceOptions = [],
     thresholdMs = 3000,
     className = ""
 }) => {
-    const formStartRef = useRef(Date.now());
     const [status, setStatus] = useState("idle"); // idle | ok | error | spam
+    const formRef = useRef(null);
     const { 
         register, 
         handleSubmit,
-        reset, 
         formState: { isSubmitting },
     } = useForm({
         mode: "onSubmit",
         shouldUseNativeValidation: true,
     });
 
+    useEffect(() => {
+        if (formRef.current) {
+            formRef.current.dataset.start = String(performance.now());
+        }
+    }, []);
+
     const onSubmit = async (data, event) => {
         // Anti-spam
-        const elapsed = Date.now() - formStartRef.current;
+        const start = Number(event?.currentTarget?.dataset?.start ?? 0);
+        let elapsed = (event?.timeStamp ?? 0) - start;
+        if (!Number.isFinite(elapsed) || elapsed < 0) elapsed = thresholdMs + 1;
         if (data.website || elapsed < thresholdMs) {
             setStatus("spam");
             return;
         }
 
-        if (action) {
-            const formEl = event?.target;
-            if (formEl && formEl instanceof HTMLFormElement) {
-                const hidden = document.createElement("input");
-                hidden.type = "hidden";
-                hidden.name = "_elapsed";
-                hidden.value = String(elapsed);
-                formEl.appendChild(hidden);
-                formEl.submit();
-            }
-            return;
+        const formEl = event?.target;
+        if (formEl && formEl instanceof HTMLFormElement) {
+            const hidden = document.createElement("input");
+            hidden.type = "hidden";
+            hidden.name = "_elapsed";
+            hidden.value = String(elapsed);
+            formEl.appendChild(hidden);
+            formEl.submit();
         }
-
-        if (fetchUrl) {
-            try {
-                const res = await fetch(fetchUrl, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data),
-                });
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                setStatus("ok");
-                reset();
-                onSuccess?.(data);
-            } catch (err) {
-                setStatus("error");
-                onError?.(err);
-            }
-            return;
-        }
-
-        // Pretend ok if no status (testing/dev mode only, remove this before build)
-        setStatus("ok");
-        reset();
     };
 
     return (
         <form
             className={`contact ${className}`}
             onSubmit={handleSubmit(onSubmit)}
+            ref={formRef}
             action="https://usebasin.com/f/4da2cdee83ad"
             method="POST"
-            encType="multipart/form-data"
+            acceptCharset="UTF-8"
             id="form"
             noValidate
         >
             {/* Honeypot: visible only to bots */}
             <div className="hp" aria-hidden="true">
                 <label htmlFor="website">Website</label>
-                <input id="website" type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
+                <input name="website" id="website" type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
             </div>
             
             <div className="grid">
@@ -101,6 +65,7 @@ const ContactForm = ({
                     <label htmlFor="name">Name<span aria-hidden="true"> *</span></label>
                     <input
                         id="name"
+                        name="name"
                         type="text"
                         placeholder="Jane Doe"
                         {...register("name", { required: "Please enter your name." })}
@@ -110,12 +75,18 @@ const ContactForm = ({
 
                 <div className="field">
                     <label htmlFor="org">Organization</label>
-                    <input id="org" type="text" placeholder="Your Organization" {...register("org")} />
+                    <input 
+                        name="org" 
+                        id="org" 
+                        type="text" 
+                        placeholder="Your Organization" {...register("org")} 
+                    />
                 </div>
 
                 <div className="field">
                     <label htmlFor="email">Email<span aria-hidden="true"> *</span></label>
                     <input
+                        name="email"
                         id="email"
                         type="email"
                         placeholder="you@example.com"
@@ -125,15 +96,6 @@ const ContactForm = ({
                         })}
                         aria-required="true"
                     />
-                </div>
-
-                <div className="field">
-                    <label htmlFor="audience">Audience</label>
-                    <select id="audience" defaultValue="" {...register("audience")}>
-                        {audienceOptions.map((opt) => (
-                            <option key={opt} value={opt}>{opt[0].toUpperCase() + opt.slice(1)}</option>
-                        ))}
-                    </select>
                 </div>
             </div>
 

@@ -37,11 +37,11 @@
 .media-video__meta { margin-top: .5rem; color: color-mix(in srgb, var(--color-text) 80%, transparent); }
 
 .press-grid {
-  display: grid; gap: clamp(.8rem, 2vw, 1rem);
+  display: grid; 
+  gap: clamp(.8rem, 2vw, 1rem);
   grid-template-columns: 1fr;
   @media (min-width: map-get($bp, lg)) { grid-template-columns: repeat(3, 1fr); }
 }
-.press__body { display: grid; gap: .25rem; }
 .press__source {
   font-size: .85rem;
   color: color-mix(in srgb, var(--color-text-inverted) 70%, transparent);
@@ -53,7 +53,13 @@
   min-width: 60px;
   margin-bottom: .6rem;
 }
-.card__footer {
+.press__body .action-container {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+
+  @include respond-down(sm) {
+    margin-bottom: 0.2rem !important;
+    margin-top: 1rem !important;
+  }
 }

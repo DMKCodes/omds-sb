@@ -6,12 +6,15 @@ import Section from "../components/common/Section";
 import ActionButton from "../components/common/ActionButton";
 
 const Events = () => {
-const seo = buildSeo({
-    title: "Upcoming Events — One Man Drum Show | Pike County, Pennsylvania",
-    description: "See where Powerhouse Percussion is performing next. View dates, locations, and details—or request One Man Chaos for your school, festival, or community event.",
-    path: "/events",
-    image: "/assets/example.jpg",
-});
+    const seo = buildSeo({
+        title: "Upcoming Events — One Man Drum Show | Pike County, Pennsylvania",
+        description: "See where Powerhouse Percussion is performing next. View dates, locations, and details—or request One Man Chaos for your school, festival, or community event.",
+        path: "/events",
+        image: "/assets/og/og-image.png",
+        imageAlt: "Powerhouse Percussion logo",
+        imageWidth: 1200,
+        imageHeight: 630
+    });
 
     return (
         <div className="container u-stack page">

@@ -10,7 +10,10 @@ const Contact = () => {
         title: "Contact Powerhouse Percussion — Book Now | Pike County, Pennsylvania",
         description: "Ready to bring the One Man Drum Show to your school or event? Send a message for dates, packages, and technical needs. Powerhouse Percussion makes setup easy.",
         path: "/contact",
-        image: "/assets/example.jpg",
+        image: "/assets/og/og-image.png",
+        imageAlt: "Powerhouse Percussion logo",
+        imageWidth: 1200,
+        imageHeight: 630
     });
     
     return (

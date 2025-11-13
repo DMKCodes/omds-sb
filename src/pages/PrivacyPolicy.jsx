@@ -11,7 +11,10 @@ const PrivacyPolicy = () => {
         title: "Privacy Policy | Powerhouse Percussion",
         description: "How we collect, use, and protect information on this site.",
         path: "/privacy",
-        image: "/assets/example.jpg",
+        image: "/assets/og/og-image.png",
+        imageAlt: "Powerhouse Percussion logo",
+        imageWidth: 1200,
+        imageHeight: 630
     });
     
     return (

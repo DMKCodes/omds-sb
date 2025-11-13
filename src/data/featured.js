@@ -41,3 +41,24 @@ export const featuredBioLong = {
     ctaHref: "",
     ctaLabel: "",
 };
+
+export const featuredCharity = {
+    mediaSrc: "assets/media/matty.jpg",
+    mediaAlt: "Matty Fish, namesake of the Matty Fish Memorial Scholarship Fund",
+    title: "Charitable Donations",
+    content:
+        <>
+            <p className="feature__content-body">
+                In celebration of Wes Lambert&apos;s childhood friend, Matty Fish, 10% of the proceeds from every live One Man Drum Show performance are donated to the Matty Fish Memorial Scholarship Fund, advancing a cause both Wes and Matty held close to their hearts: music education.
+            </p>
+            <p className="feature__content-body">
+                In addition, 50% of all One Man Drum Show merchandise sales are donated to the <a href="https://www.ecumenicalfoodpantry.org/">Ecumenical Food Pantry of Pike County</a>, helping those in need in our community.
+            </p>
+            <p className="feature__content-body">
+                We thank you for your support of these most deserving organizations.
+            </p>
+        </>,
+    cta: false,
+    ctaHref: "",
+    ctaLabel: "",
+}

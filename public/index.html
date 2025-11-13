@@ -1,35 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Positivity Through Percussion | Audiovisual Entertainer | Pike County, PA" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Positivity Through Percussion | Audiovisual Entertainer | Pike County, PA" />
 
-    <link rel="icon" href="%PUBLIC_URL%/assets/favicon.ico" />
-    <link rel="icon" href="/assets/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!-- Favicons / icons -->
+  <link rel="icon" href="%PUBLIC_URL%/assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="%PUBLIC_URL%/assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/assets/apple-touch-icon.png" />
+  <link rel="mask-icon" href="%PUBLIC_URL%/assets/safari-pinned-tab.svg" color="#00A7B3" />
 
-    <title>Powerhouse Percussion</title>
+  <!-- PWA -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
-    <script type="text/javascript">
-      function configureAhoy() {
-        ahoy.configure({
-          visitsUrl: "https://usebasin.com/ahoy/visits",
-          eventsUrl: "https://usebasin.com/ahoy/events",
-          page: "4da2cdee83ad" /* Use your form id here */
-        });
-        ahoy.trackView();
-        ahoy.trackSubmits();
-      }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.9/dist/ahoy.min.js" async defer onload="configureAhoy()"></script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
-</html>
+  <title>Powerhouse Percussion</title>
+
+  <!-- Tockify: load once globally -->
+  <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js" defer></script>
+
+  <!-- Basin Ahoy (defer + onload init) -->
+  <script>
+    function configureAhoy() {
+      if (!window.ahoy) return;
+      ahoy.configure({
+        visitsUrl: "https://usebasin.com/ahoy/visits",
+        eventsUrl: "https://usebasin.com/ahoy/events",
+        page: "4da2cdee83ad"
+      });
+      ahoy.trackView();
+      ahoy.trackSubmits();
+    }
+    window.addEventListener('ahoy:ready', configureAhoy);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/ahoy.js@0.3.9/dist/ahoy.min.js"
+          defer
+          onload="window.dispatchEvent(new Event('ahoy:ready'))"></script>
+</head>

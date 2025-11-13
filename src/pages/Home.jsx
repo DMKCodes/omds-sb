@@ -19,7 +19,10 @@ const Home = () => {
         title: "One Man Drum Show — Musician & Entertainer",
         description: "A 45-minute drum and visuals extravaganza for schools, events, and parties. Book Powerhouse Percussion's One Man Drum Show for unforgettable, family-friendly entertainment in Northeast Pennsylvania.",
         path: "/",
-        image: "/assets/example.jpg",
+        image: "/assets/og/og-image.png",
+        imageAlt: "Powerhouse Percussion logo",
+        imageWidth: 1200,
+        imageHeight: 630
     });
 
     return (

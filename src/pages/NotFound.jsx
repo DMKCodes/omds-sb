@@ -7,10 +7,13 @@ import Section from "../components/common/Section";
 
 const NotFound = () => {
     const seo = buildSeo({
-        title: "PROJECT TITLE",
-        description: "Project description, typically 30-60 chars.",
+        title: "404 Not Found — One Man Drum Show | Pike County, Pennsylvania",
+        description: "Sorry, we couldn't find that. Please try again.",
         path: "/",
-        image: "/assets/example.jpg",
+        image: "/assets/og/og-image.png",
+        imageAlt: "Powerhouse Percussion logo",
+        imageWidth: 1200,
+        imageHeight: 630
     });
     
     return (

@@ -17,6 +17,9 @@ export function buildSeo({
     description = SITE.tagline,
     path = "/",
     image = SITE.defaultImage,
+    imageAlt = `${SITE.name} — promotional image`,
+    imageWidth = 1200,
+    imageHeight = 630,
     noindex = false,
     locale = SITE.locale,
 } = {}) {
@@ -27,6 +30,9 @@ export function buildSeo({
         description,
         url,
         image: imgAbs,
+        imageAlt,
+        imageWidth,
+        imageHeight,
         noindex,
         locale,
         siteName: SITE.name,
@@ -34,7 +40,7 @@ export function buildSeo({
 };
 
 export function renderHelmetTags(Helmet, seo) {
-    const { title, description, url, image, noindex, locale, siteName } = seo;
+    const { title, description, url, image, imageAlt, imageWidth, imageHeight, noindex, locale, siteName } = seo;
 
     return (
         <Helmet>
@@ -54,7 +60,14 @@ export function renderHelmetTags(Helmet, seo) {
             <meta property="og:title" content={title} />
             {description && <meta property="og:description" content={description} />}
             <meta property="og:url" content={url} />
-            {image && <meta property="og:image" content={image} />}
+            {image && (
+                <>
+                    <meta property="og:image" content={image} />
+                    <meta property="og:image:width" content={String(imageWidth)} />
+                    <meta property="og:image:height" content={String(imageHeight)} />
+                    {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+                </>
+            )}
         </Helmet>
     );
 };

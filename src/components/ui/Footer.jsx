@@ -36,8 +36,8 @@ const Footer = () => {
                 <address className="footer__address">
                     <strong className="footer__business">Powerhouse Percussion</strong><br />
                     Wes Lambert &mdash; One-Man Chaos<br />
-                    <a className="footer__contact" href="tel:+15555555555">+1 (555) 555-5555</a><br />
-                    <a className="footer__contact" href="mailto:trashlan@ptd.net">trashlan@ptd.net</a><br />
+                    <a className="footer__contact" href="tel:+15709559535">+1 (570) 955-9535</a><br />
+                    <a className="footer__contact" href="mailto:omcwhq@gmail.com">omcwhq@gmail.com</a><br />
                     Milford, Pike County, Pennsylvania
                     <p className="hotkey">
                         Website by{' '} 

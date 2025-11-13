@@ -4,8 +4,6 @@ import { trackCtaClick } from "../../lib/analytics";
 import { SITE } from "../../lib/siteConfig";
 import SocialIcons from "./SocialIcons";
 import SpotlightLayer from "../ui/SpotlightLayer";
-import ThemeToggle from "../common/ThemeToggle";
-import useMediaQuery from "../../hooks/useMediaQuery";
 
 const links = [
     { to: "info", label: "INFO" },
@@ -17,7 +15,6 @@ const links = [
 const Header = () => {
     const logoSrc = "/assets/brand/logo.png";
     const [open, setOpen] = useState(false);
-    const isDesktop = useMediaQuery("(min-width: 56rem)");
 
     useEffect(() => {
         const onKey = (e) => e.key === "Escape" && setOpen(false);
@@ -78,7 +75,6 @@ const Header = () => {
                 
                 <div className="header-right">
                     <SocialIcons size="md" location="Header" />
-                    {isDesktop && <ThemeToggle className="u-ml-sm" />}
                 </div>
             </div>
 
@@ -105,9 +101,6 @@ const Header = () => {
                             </NavLink>
                         </li>
                     ))}
-                    <div style={{ margin: ".5rem 0 .5rem 0" }}>
-                        {!isDesktop && <ThemeToggle />}
-                    </div>
                 </ul>
             </nav>
         </header>
