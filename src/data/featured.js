@@ -52,7 +52,7 @@ export const featuredCharity = {
                 In celebration of Wes Lambert&apos;s childhood friend, Matty Fish, 10% of the proceeds from every live One Man Drum Show performance are donated to the Mathew Fish Memorial Scholarship, advancing a cause both Wes and Matty held close to their hearts: music education.
             </p>
             <p className="feature__content-body">
-                In addition, 50% of all One Man Drum Show merchandise sales are donated to the <a href="https://www.ecumenicalfoodpantry.org/">Ecumenical Food Pantry of Pike County</a>, helping those in need in our community.
+                In addition, 50% of all One Man Drum Show merchandise sales are donated to the <a href="https://www.htlcpa.org/food-pantry" target="_blank" rel="noreferrer">Holy Trinity Food Pantry</a>, helping those in need in our community.
             </p>
             <p className="feature__content-body">
                 We thank you for your support of these most deserving organizations.
