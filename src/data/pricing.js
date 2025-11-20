@@ -18,7 +18,7 @@ export const plans = [
         price: "$950",
         blurb: "One show w/ meet and greet and drum seminar.",
         features: [
-            "All features of The Toe Tapper.",
+            "All features of The Cymbal Crasher.",
             "Meet and greet before or after the show.",
             "One-hour educational seminar.",
             "Additional same-day show for just $199."
@@ -32,7 +32,7 @@ export const plans = [
         price: "$1,100",
         blurb: "One show w/ meet and greet, special drum workshop, and custom drum solo.",
         features: [
-            "All features of The Hip Shaker.",
+            "All features of The Drum Beater.",
             "Additional, custom drum solo created just for your organization or company included in the performance.",
             "One Man Chaos drum workshop.",
             "Additional same-day show for just $99."

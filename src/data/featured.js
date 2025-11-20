@@ -1,7 +1,7 @@
 import React from "react";
 
 export const featuredBioShort = {
-    mediaSrc: "assets/media/wes-pic-test.jpg",
+    mediaSrc: "assets/media/wes-bio.jpeg",
     mediaAlt: "Wes Lambert, the One Man Chaos drum performer",
     title: "Who is One Man Chaos?",
     content: 
@@ -19,7 +19,7 @@ export const featuredBioShort = {
 };
 
 export const featuredBioLong = {
-    mediaSrc: "assets/media/wes-pic-test.jpg",
+    mediaSrc: "assets/media/wes-bio.jpeg",
     mediaAlt: "Wes Lambert, the One Man Chaos drum performer",
     title: "Who is One Man Chaos?",
     content: 
@@ -44,12 +44,12 @@ export const featuredBioLong = {
 
 export const featuredCharity = {
     mediaSrc: "assets/media/matty.jpg",
-    mediaAlt: "Matty Fish, namesake of the Matty Fish Memorial Scholarship Fund",
+    mediaAlt: "Matty Fish, namesake of the Matty Fish Memorial Scholarship",
     title: "Charitable Donations",
     content:
         <>
             <p className="feature__content-body">
-                In celebration of Wes Lambert&apos;s childhood friend, Matty Fish, 10% of the proceeds from every live One Man Drum Show performance are donated to the Matty Fish Memorial Scholarship Fund, advancing a cause both Wes and Matty held close to their hearts: music education.
+                In celebration of Wes Lambert&apos;s childhood friend, Matty Fish, 10% of the proceeds from every live One Man Drum Show performance are donated to the Mathew Fish Memorial Scholarship, advancing a cause both Wes and Matty held close to their hearts: music education.
             </p>
             <p className="feature__content-body">
                 In addition, 50% of all One Man Drum Show merchandise sales are donated to the <a href="https://www.ecumenicalfoodpantry.org/">Ecumenical Food Pantry of Pike County</a>, helping those in need in our community.

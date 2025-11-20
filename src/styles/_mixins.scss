@@ -54,13 +54,9 @@
   @media #{$query} { @content; }
 }
 
-/* Motion & color-scheme helpers */
+/* Motion helper */
 @mixin reduce-motion {
   @media (prefers-reduced-motion: reduce) { @content; }
-}
-
-@mixin color-scheme($scheme) {
-  @media (prefers-color-scheme: #{$scheme}) { @content; }
 }
 
 /* CSS var with fallback */
