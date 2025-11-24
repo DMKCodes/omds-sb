@@ -44,12 +44,12 @@ export const featuredBioLong = {
 
 export const featuredCharity = {
     mediaSrc: "assets/media/matty.jpg",
-    mediaAlt: "Matty Fish, namesake of the Matty Fish Memorial Scholarship",
+    mediaAlt: "Mathew Fischl, namesake of the Mathew Fischl Memorial Scholarship",
     title: "Charitable Donations",
     content:
         <>
             <p className="feature__content-body">
-                In celebration of Wes Lambert&apos;s childhood friend, Matty Fish, 10% of the proceeds from every live One Man Drum Show performance are donated to the Mathew Fish Memorial Scholarship, advancing a cause both Wes and Matty held close to their hearts: music education.
+                In celebration of Wes Lambert&apos;s childhood friend, Matty Fish, 10% of the proceeds from every live One Man Drum Show performance are donated to the Mathew Fischl Memorial Scholarship, advancing a cause both Wes and Matty held close to their hearts: music education.
             </p>
             <p className="feature__content-body">
                 In addition, 50% of all One Man Drum Show merchandise sales are donated to the <a href="https://www.htlcpa.org/food-pantry" target="_blank" rel="noreferrer">Holy Trinity Food Pantry</a>, helping those in need in our community.
